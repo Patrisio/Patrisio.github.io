@@ -1,6 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import loadable from '@loadable/component'
-
 import * as styles from './indicators.module.css';
 import dotsBg from '../../images/dots.svg';
 import { Waypoint } from 'react-waypoint';
