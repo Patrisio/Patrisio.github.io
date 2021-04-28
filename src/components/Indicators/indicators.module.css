@@ -1,0 +1,97 @@
+.indicatorsContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 330px 16px 0;
+  overflow: hidden;
+}
+
+.dotsBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -10%);
+}
+
+.circlesContainer {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: .3;
+  top: 45%;
+  left: 50px;
+}
+
+.description {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 24px;
+}
+
+.card {
+  width: 211px;
+  color: #fff;
+}
+
+.hello {
+  color: #fff;
+}
+
+.count {
+  color: #2BF12E;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 120px;
+}
+
+.dummy1 {
+
+}
+
+.dummy2 {
+  
+}
+
+.dummy3 {
+  
+}
+
+.dummy4 {
+  
+}
+
+@media screen and (max-width: 1130px) {
+  .count {
+    font-size: 80px;
+  }
+
+  .description {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .card {
+    width: 150px;
+  }
+}
+
+@media screen and (max-width: 615px) {
+  .circlesContainer {
+    display: none;
+  }
+
+  .indicatorsContainer {
+    padding-top: 78px;
+  }
+
+  .card {
+    width: 40%;
+  }
+
+  .card:nth-child(1) {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,40 @@
+.loadingPageContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingOuter {
+  position: relative;
+  height: 4px;
+  width: 336px;
+  background: rgba(43, 241, 46, 0.17);
+}
+
+.loadingInner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #2BF12E;
+}
+
+.percentageContainer {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: #fff;
+  width: 336px;
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .loadingOuter,
+  .percentageContainer {
+    width: 260px;
+  }
+}

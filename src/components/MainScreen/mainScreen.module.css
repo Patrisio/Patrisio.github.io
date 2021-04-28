@@ -1,0 +1,174 @@
+.mainScreenContainer {
+  position: relative;
+  overflow: hidden;
+  padding: 90px 16px 16px;
+}
+
+.supTitle {
+  font-size: 40px;
+  line-height: 112%;
+  color: #fff;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.mainTitle {
+  font-size: 113px;
+}
+
+.runCampaign {
+  margin-top: 65px;
+}
+
+.background {
+  
+}
+
+.features {
+  position: absolute;
+  right: 0;
+  bottom: 55px;
+  width: 209px;
+  z-index: 2;
+  padding-right: 16px;
+  animation-duration: 1.5s;
+  animation-name: scale;
+}
+
+.description {
+  margin-top: 16px;
+}
+
+.circlesContainer {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-55%);
+  width: 455px;
+  height: 455px;
+  z-index: 1;
+  opacity: .2
+}
+
+.circle {
+  position: absolute;
+}
+
+.dotsBg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circlesShadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: #2BF12E;
+  border-radius: 50%;
+  box-shadow: 1px 1px 1000px #2bf12e;
+  filter: blur(40px);
+}
+
+.button {
+  width: 268px;
+  animation-duration: 1.5s;
+  animation-name: scale;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(100%);
+  }
+}
+
+.mainTitleType {
+  color: #2BF12E;
+  font-weight: 700;
+  text-transform: uppercase;
+  max-width: 1050px;
+  height: 226px;
+}
+
+@media screen and (max-width: 1048px) {
+  .features {
+    top: 90px;
+  }
+
+  .mainTitleType {
+    height: 326px;
+  }
+}
+
+@media screen and (max-width: 775px) {
+  .mainScreenContainer {
+    text-align: center;
+  }
+
+  .mainTitleType {
+    height: auto;
+  }
+
+  .circlesContainer {
+    display: none;
+  }
+
+  .features {
+    position: static;
+    text-align: center;
+    width: fit-content;
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .mainTitle {
+    font-size: 80px;
+  }
+
+  .supTitle {
+    font-size: 30px;
+  }
+
+  .runCampaign {
+    margin-top: 36px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .mainScreenContainer {
+    margin-top: 30px;
+  }
+
+  .mainTitle {
+    font-size: 40px;
+  }
+
+  .mainTitleType {
+    height: fit-content;
+  }
+
+  .description {
+    font-size: 18px;
+  }
+
+  .supTitle {
+    font-size: 17px;
+  }
+
+  .runCampaign {
+    font-size: 18px;
+  }
+}

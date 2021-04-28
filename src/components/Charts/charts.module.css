@@ -1,0 +1,274 @@
+.chartContainer {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 80px;
+  user-select: none;
+  cursor: grab;
+}
+
+.slick {
+  width: 800px;
+}
+
+.chartHeader {
+  display: flex;
+  position: relative;
+  z-index: 999;
+}
+
+.chartHeader img {
+  pointer-events: none;
+} 
+
+.chartSlide {
+  position: relative;
+  border-left: 2px solid #2BF12E;
+  border-right: 2px solid #2BF12E;
+  padding: 65px 40px 50px;
+  min-width: 170px;
+}
+
+.chartSlide:not(:last-child) {
+  margin-right: 62px;
+}
+
+.legendsContainer {
+  color: #fff;
+  margin-left: auto;
+  width: fit-content;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.legendContainer {
+  display: flex;
+  align-items: center;
+}
+
+.legend {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 16px;
+}
+
+.green {
+  background: #2BF12E;
+}
+
+.white {
+  background: #fff;
+}
+
+.text {
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.chart {
+  height: 142px;
+}
+
+.left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.greenTail {
+  width: 50px;
+  height: 2px;
+  background: #2BF12E;
+}
+
+.right .top .shadowTop {
+  right: 50px;
+  top: -50px;
+  left: auto;
+  transform: rotate(90deg);
+}
+
+.right .bottom .shadowBottom {
+  right: 50px;
+  bottom: -50px;
+  left: auto;
+  top: auto;
+  transform: rotate(90deg);
+}
+
+.left .top {
+  position: absolute;
+  top: 0;
+}
+
+.left .bottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.left .top .shadowTop {
+  top: -50px;
+  left: 50px;
+  transform: rotate(90deg);
+}
+
+.left .bottom .shadowBottom {
+  bottom: -50px;
+  top: auto;
+  left: 50px;
+  transform: rotate(90deg);
+}
+
+.greenTailBottom {
+  position: absolute;
+  bottom: 0;
+}
+
+.chartsInner {
+  display: flex;
+}
+
+.chartText {
+  display: block;
+  color: #fff;
+  margin: 4px 0 10px;
+  text-transform: uppercase;
+}
+
+.numbers {
+  display: block;
+  color: #2BF12E;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.chartCard {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  font-size: 10px;
+  max-width: 500px;
+  border-left: 2px solid #2BF12E;
+  border-right: 2px solid #2BF12E;
+}
+
+.description,
+.chartPreview {
+  position: relative;
+  z-index: 999;
+}
+
+.chartCard:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.textWhite {
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.mobileLogo {
+  margin-bottom: 21px;
+  width: 104px;
+}
+
+.mobileLogo img {
+  width: 100%;
+}
+
+.marginBottom {
+  margin-bottom: 4px;
+}
+
+.mobileCharts {
+  margin-top: 20px;
+}
+
+.chartsContainerMobile {
+  display: none;
+  padding: 0 16px;
+}
+
+@media screen and (max-width: 1060px) {
+  .chartHeader img {
+    max-width: 150px;
+  }
+  .text {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .chartSlide {
+    padding: 30px 40px 10px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .chartHeader img {
+    max-width: 100px;
+  }
+  .text {
+    font-size: 10px;
+    line-height: 15px;
+  }
+  .chartSlide {
+    padding: 10px 20px 0;
+  }
+  .legend {
+    width: 5px;
+    height: 5px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .chart {
+    height: 100px;
+  }
+  .chartHeader img {
+    max-width: 70px;
+  }
+  .text {
+    font-size: 7px;
+    line-height: 10px;
+  }
+  .chartSlide {
+    padding: 0 15px;
+  }
+  .legend {
+    width: 3px;
+    height: 3px;
+    margin-right: 7px;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .chartHeader img {
+    max-width: 50px;
+  }
+  .chartSlide {
+    padding: 0 10px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .desktopChart {
+    display: none;
+  }
+
+  .chartsContainerMobile {
+    display: block;
+  }
+}

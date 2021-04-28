@@ -1,0 +1,36 @@
+.textBlockContainer {
+  max-width: 833px;
+  margin: 98px 55px 0 auto;
+  padding: 0 16px;
+}
+
+.flexTextBlockContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 194px auto 0;
+  max-width: 1264px;
+  padding: 0 16px;
+}
+
+.paragraph {
+  max-width: 700px;
+  margin-top: 44px;
+}
+
+.title {
+  line-height: 80px;
+}
+
+@media screen and (max-width: 1100px) {
+  .flexTextBlockContainer {
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .textBlockContainer {
+    margin: 0;
+  }
+}

@@ -1,0 +1,126 @@
+.formContainer {
+  margin: 160px auto 0;
+  max-width: 1264px;
+  padding: 0 16px;
+}
+
+.form1 {
+  height: 126px
+}
+
+.form2 {
+  height: 50px;
+}
+
+.formContent {
+  transform: translateY(200px);
+  display: flex;
+  justify-content: space-between;
+  padding: 88px 0 65px;
+  transition: .5s all;
+  opacity: 0;
+}
+
+.formPart:not(:last-child) {
+  margin-right: 20px;
+}
+
+.mainTitle {
+  font-size: 28px;
+  color: #2BF12E;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 63px;
+}
+
+.description {
+  position: relative;
+  z-index: 999;
+  color: #fff;
+  font-size: 16px;
+  line-height: 160%;
+  font-weight: 400;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1232px;
+  margin: 0 auto;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.activeButton {
+  transform: scale(1) !important;
+}
+
+.paragraph {
+  max-width: 209px;
+}
+
+.title {
+  max-width: 833px;
+  font-size: 63px;
+}
+
+.button {
+  width: 268px;
+  transform: scale(0);
+  transition: .5s all;
+}
+
+@media screen and (max-width: 1150px) {
+  .titleContainer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .paragraph {
+    max-width: 500px;
+  }
+
+  .formContent {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0 32px;
+  }
+
+  .formPart {
+    width: 100%;
+  }
+
+  .formPart:not(:last-child) {
+    margin: 0 0 20px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .inputMobile {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 825px) {
+  .form1,
+  .form2 {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .form1 .mainTitle {
+    font-size: 28px !important;
+  }
+}

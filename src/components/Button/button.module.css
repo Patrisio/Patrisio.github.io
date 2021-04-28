@@ -1,0 +1,60 @@
+.buttonContainer {
+  position: relative;
+  color: #fff;
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+}
+
+.buttonContainer:hover .shadow {
+  /* transform: translate(-25%, -25%) skew(47deg, 15deg); */
+  box-shadow: 1px 1px 50px #000;
+}
+
+.border {
+  position: absolute;
+  background: #2BF12E;
+}
+
+.borderLeft {
+  left: 0;
+  width: 4px;
+  height: 60px;
+  background: #2BF12E;
+}
+
+.borderRight {
+  right: 0;
+  width: 4px;
+  height: 60px;
+  background: #2BF12E;
+}
+
+.borderTop {
+  top: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.borderBottom {
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+}
+
+.buttonTitle {
+  position: relative;
+  padding: 22px;
+  z-index: 99;
+}
+
+.buttonTitle a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.shadow {
+  transform: translate(-50%, -50%) skew(47deg, 15deg);
+}

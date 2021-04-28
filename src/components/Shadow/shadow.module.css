@@ -1,0 +1,12 @@
+.shadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  box-shadow: 1px 1px 25px #0C1201;
+  width: 50px;
+  height: 100px;
+  background: #0C1201;
+  transition: .3s all;
+  will-change: box-shadow;
+}

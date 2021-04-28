@@ -1,0 +1,35 @@
+.clientsContainer {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  margin: 154px 0 200px;
+}
+
+.clientLogoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 1100px) {
+  .clientsContainer {
+    margin: 30px 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .image {
+    height: 30px;
+  }
+}
