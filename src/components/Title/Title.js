@@ -1,4 +1,4 @@
-import React from 'React';
+import React from 'react';
 import * as styles from './title.module.css';
 
 export default function Title({ text, size }) {
