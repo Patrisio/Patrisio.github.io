@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 
 import * as styles from './indicators.module.css';
-// import { Flip } from '../../utils/number-flip';
+import { Flip } from '../../utils/number-flip';
 import dotsBg from '../../images/dots.svg';
 import { Waypoint } from 'react-waypoint';
 import move from '../../utils/move';
@@ -41,30 +41,30 @@ export default function Indicators({ id }) {
   ];
 
   const initAnimation = () => {
-    // new Flip({
-    //   node: document.querySelector(`.${styles.dummy1}`),
-    //   from: 99,
-    //   to: 50,
-    //   duration: 4
-    // })
-    // new Flip({
-    //   node: document.querySelector(`.${styles.dummy2}`),
-    //   from: 99,
-    //   to: 70,
-    //   duration: 4
-    // })
-    // new Flip({
-    //   node: document.querySelector(`.${styles.dummy3}`),
-    //   from: 99,
-    //   to: 50,
-    //   duration: 4
-    // })
-    // new Flip({
-    //   node: document.querySelector(`.${styles.dummy4}`),
-    //   from: 99,
-    //   to: 5,
-    //   duration: 4
-    // })
+    new Flip({
+      node: document.querySelector(`.${styles.dummy1}`),
+      from: 99,
+      to: 50,
+      duration: 4
+    })
+    new Flip({
+      node: document.querySelector(`.${styles.dummy2}`),
+      from: 99,
+      to: 70,
+      duration: 4
+    })
+    new Flip({
+      node: document.querySelector(`.${styles.dummy3}`),
+      from: 99,
+      to: 50,
+      duration: 4
+    })
+    new Flip({
+      node: document.querySelector(`.${styles.dummy4}`),
+      from: 99,
+      to: 5,
+      duration: 4
+    })
   };
 
   useEffect(() => {
