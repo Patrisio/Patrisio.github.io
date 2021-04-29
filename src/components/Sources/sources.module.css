@@ -94,6 +94,7 @@
 
 .button {
   display: none;
+  text-decoration: none;
 }
 
 .sourcesFlex {
