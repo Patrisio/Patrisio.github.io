@@ -29,7 +29,7 @@ const IndexPage = () => {
   const [isMobileDevice, setIsMobileDevice] = useState(false);
 
   useEffect(() => {
-    window.version = '1.0.6';
+    window.version = '1.0.7';
     const module = typeof window !== `undefined` ? require("../utils/detector") : null;
     const detect = module.default;
 
