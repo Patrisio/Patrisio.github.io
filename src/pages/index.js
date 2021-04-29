@@ -29,6 +29,7 @@ const IndexPage = () => {
   const [isMobileDevice, setIsMobileDevice] = useState(false);
 
   useEffect(() => {
+    window.version = '1.0.2';
     const module = typeof window !== `undefined` ? require("../utils/detector") : null;
     const detect = module.default;
 
@@ -41,8 +42,8 @@ const IndexPage = () => {
     <Context.Provider value={{ lang, changeLang }}>
       <main style={{ fontFamily: '"JetBrains Mono", monospace', background: '#0C1201' }}>
         {
-          // isLoading ?
-          // <LoadingPage toggleLoading={toggleLoading}/> :
+          isLoading ?
+          <LoadingPage toggleLoading={toggleLoading}/> :
           <>
             <div style={{ maxWidth: '1264px', margin: '0 auto' }}>
               <Helmet>
