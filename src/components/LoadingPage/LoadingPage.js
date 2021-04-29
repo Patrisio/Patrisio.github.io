@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as styles from './loadingPage.module.css';
+import logo from "../../images/logo.svg";
 
 export default function LoadingPage({ toggleLoading }) {
   const [progress, updateProgress] = useState(0);
@@ -19,6 +20,10 @@ export default function LoadingPage({ toggleLoading }) {
 
   return (
     <div className={styles.loadingPageContainer}>
+      <div className={styles.logoContainer}>
+        <img src={logo} alt='logo-syndicate'/>
+      </div>
+
       <div className={styles.loadingOuter}>
         <div className={styles.loadingInner} style={{ width: `${progress}%` }}/>
       </div>

@@ -7,6 +7,10 @@
   justify-content: center;
 }
 
+.logoContainer {
+  margin-bottom: 20px;
+}
+
 .loadingOuter {
   position: relative;
   height: 4px;
