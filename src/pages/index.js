@@ -42,8 +42,8 @@ const IndexPage = () => {
     <Context.Provider value={{ lang, changeLang }}>
       <main style={{ fontFamily: '"JetBrains Mono", monospace', background: '#0C1201' }}>
         {
-          isLoading ?
-          <LoadingPage toggleLoading={toggleLoading}/> :
+          // isLoading ?
+          // <LoadingPage toggleLoading={toggleLoading}/> :
           <>
             <div style={{ maxWidth: '1264px', margin: '0 auto' }}>
               <Helmet>
@@ -74,9 +74,10 @@ const IndexPage = () => {
               <Waypoint
                 onEnter={() => {
                   if (!isActive) {
+                    const speed = isMobileDevice ? 10 : 20;
                     type(
                       `<h2 class='${styles.description}'>Мы готовы обсуждать сотрудничество с целыми командами, брать их под свое крыло и давать всю инфраструктуру для того, чтобы делать х10 от того, что они делают сейчас.</h2>`,
-                      0, false, '', 'index-1', 20);
+                      0, false, '', 'index-1', speed);
                   }
                 }}
               />

@@ -104,6 +104,8 @@
 
   .indicatorsContainer {
     padding-top: 105px;
+    position: relative;
+    left: 15px;
   }
 
   .card {
