@@ -56,7 +56,10 @@ export default function Burger() {
           <Button
             classNames={styles.button}
             onClick={() => {
-              toggle(prev => !prev);
+              toggle(prev => {
+                prev ? document.body.style.overflow = 'auto' : document.body.style.overflow = 'hidden';
+                return !prev;
+              });
             }}
           >
             Запустить кампанию
