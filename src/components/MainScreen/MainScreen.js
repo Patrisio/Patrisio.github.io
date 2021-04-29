@@ -20,7 +20,9 @@ export default function MainScreen() {
   const background = useRef(null);
 
   useEffect(() => {
-    type(`<h2 class='${styles.mainTitleType}'>Топовая команда медиабаинга</h2>`, 0, false, '', 'mainTitle');
+    setTimeout(() => {
+      type(`<h2 class='${styles.mainTitleType}'>Топовая команда медиабаинга</h2>`, 0, false, '', 'mainTitle');
+    }, 1000)
     type(`User Acquisition `, 0, false, '', 'supTitle');
   }, []);
 

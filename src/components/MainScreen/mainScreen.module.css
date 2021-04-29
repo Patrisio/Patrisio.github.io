@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   padding: 90px 16px 16px;
+  height: 528px;
 }
 
 .supTitle {
@@ -99,6 +100,13 @@
 }
 
 @media screen and (max-width: 1048px) {
+  .mainScreenContainer {
+    position: relative;
+    overflow: hidden;
+    padding: 90px 16px 16px;
+    height: auto;
+  }
+
   .features {
     top: 90px;
   }

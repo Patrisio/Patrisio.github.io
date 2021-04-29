@@ -9,7 +9,7 @@ import Shadow from '../Shadow/Shadow';
 import type from '../../utils/type';
 import * as styles from './features.module.css';
 
-export default function Features() {
+export default function Features({ isMobileDevice }) {
   const [isGreenLineActive, toggleLine] = useState(false);
   const features = [
     {
@@ -58,7 +58,7 @@ export default function Features() {
     <>
       <Waypoint
         onEnter={initAnimation}
-        bottomOffset={1000}
+        bottomOffset={isMobileDevice ? 0 : 500}
       />
 
       <div className={styles.mobileParagraph}>
@@ -85,7 +85,6 @@ export default function Features() {
                     src={animationPath}
                     background="transparent"
                     speed="1"
-                    loop
                     autoplay
                   />
                 </div>
@@ -121,7 +120,6 @@ export default function Features() {
                   src={animationPath}
                   background="transparent"
                   speed="1"
-                  loop
                   autoplay
                 />
               </div>

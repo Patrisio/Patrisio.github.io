@@ -28,7 +28,10 @@ export default function Burger() {
     <>
       <div
         className={styles.burger}
-        onClick={() => toggle(prev => !prev)}
+        onClick={() => toggle(prev => {
+          prev ? document.body.style.overflow = 'auto' : document.body.style.overflow = 'hidden';
+          return !prev;
+        })}
       >
         <div className={styles.circle}>
           <div className={styles.linesContainer}>
@@ -52,7 +55,9 @@ export default function Burger() {
 
           <Button
             classNames={styles.button}
-            onClick={() => toggle(prev => !prev)}
+            onClick={() => {
+              toggle(prev => !prev);
+            }}
           >
             Запустить кампанию
           </Button>

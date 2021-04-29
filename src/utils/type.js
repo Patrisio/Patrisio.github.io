@@ -1,5 +1,4 @@
-export default function type(string, i, isTag, text, id, delay = 80) {
-  
+export default function type(string, i, isTag, text, id, delay = 80, delayAnimation) {
   text = string.slice(0, ++i);
   if (text === string) return;
 

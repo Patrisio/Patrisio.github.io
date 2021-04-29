@@ -4,7 +4,7 @@ import dotsBg from '../../images/dots.svg';
 import { Waypoint } from 'react-waypoint';
 import move from '../../utils/move';
 
-export default function Indicators({ id }) {
+export default function Indicators({ id, isMobileDevice }) {
   const card1 = useRef(null);
   const card2 = useRef(null);
   const card3 = useRef(null);
@@ -79,7 +79,7 @@ export default function Indicators({ id }) {
     <>
       <Waypoint
         onEnter={initAnimation}
-        bottomOffset={500}
+        bottomOffset={isMobileDevice ? 0 : 250}
       />
 
       <div className={styles.indicatorsContainer} id={id}>

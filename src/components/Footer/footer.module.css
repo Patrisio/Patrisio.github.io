@@ -22,12 +22,13 @@
 .navigation {
   display: flex;
   flex-grow: 1;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: flex-end;
   align-items: baseline;
 }
 
 .links {
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .footer {
@@ -65,7 +66,8 @@ input:checked + label {
 }
 
 .langAndSocials {
-  display: flex;
+  /* display: flex; */
+  display: none;
 }
 
 @media screen and (max-width: 1050px) {

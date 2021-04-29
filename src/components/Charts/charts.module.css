@@ -263,7 +263,7 @@
   }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 420px) {
   .desktopChart {
     display: none;
   }

@@ -26,13 +26,23 @@ const IndexPage = () => {
   const [lang, changeLang] = useState('ru');
   const [isActive, toggleActive] = useState(false);
   const [isLoading, toggleLoading] = useState(true);
+  const [isMobileDevice, setIsMobileDevice] = useState(false);
+
+  useEffect(() => {
+    const module = typeof window !== `undefined` ? require("../utils/detector") : null;
+    const detect = module.default;
+
+    if (detect.mobile() || detect.tablet() || detect.phone()) {
+      setIsMobileDevice(true);
+    }
+  }, []);
 
   return (
     <Context.Provider value={{ lang, changeLang }}>
       <main style={{ fontFamily: '"JetBrains Mono", monospace', background: '#0C1201' }}>
         {
-          isLoading ?
-          <LoadingPage toggleLoading={toggleLoading}/> :
+          // isLoading ?
+          // <LoadingPage toggleLoading={toggleLoading}/> :
           <>
             <div style={{ maxWidth: '1264px', margin: '0 auto' }}>
               <Helmet>
@@ -43,7 +53,7 @@ const IndexPage = () => {
               </Helmet>
               <Header />
               <MainScreen />
-              <Indicators id='aboutus'/>
+              <Indicators id='aboutus' isMobileDevice={isMobileDevice}/>
 
               <div className={styles.textBlockContainer}>
                 <TextBlock>
@@ -58,7 +68,7 @@ const IndexPage = () => {
                 </TextBlock>
               </div>
 
-              <Features/>
+              <Features isMobileDevice={isMobileDevice} />
 
               <Waypoint
                 onEnter={() => {
@@ -105,7 +115,7 @@ const IndexPage = () => {
               onEnter={() => {
                 toggleActive(true);
               }}
-              bottomOffset={500}
+              bottomOffset={isMobileDevice ? 0 : 500}
             />
 
             <TextBlock>
@@ -131,7 +141,7 @@ const IndexPage = () => {
 
             <Charts id='cases' />
 
-            <Form id='form' />
+            <Form id='form' isMobileDevice={isMobileDevice}/>
 
             <Footer />
           </>

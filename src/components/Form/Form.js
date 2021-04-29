@@ -9,7 +9,7 @@ import Button from '../Button/Button';
 import type from '../../utils/type';
 import * as styles from './form.module.css';
 
-export default function Form({ id }) {
+export default function Form({ id, isMobileDevice }) {
   const [isActive, toggleActive] = useState(false);
 
   return (
@@ -60,7 +60,7 @@ export default function Form({ id }) {
           onEnter={() => {
             toggleActive(true);
           }}
-          bottomOffset={500}
+          bottomOffset={isMobileDevice ? 0 : 500}
         />
 
       <div className={`

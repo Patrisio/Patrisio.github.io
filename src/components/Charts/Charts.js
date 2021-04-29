@@ -135,7 +135,6 @@ export default function Charts({ id }) {
                       src={animationPath}
                       background="transparent"
                       speed="1"
-                      loop
                       autoplay
                     />
                   </div>
