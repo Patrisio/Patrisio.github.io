@@ -84,7 +84,7 @@ export default function Sources() {
                 count={15}
                 classNames={styles.shadowLeft}
               />
-              <span>{source}</span>
+              <span className={styles.sourceText}>{source}</span>
               <Shadow
                 count={15}
                 classNames={styles.shadowRight}

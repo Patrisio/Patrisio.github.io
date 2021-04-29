@@ -110,7 +110,13 @@ export default function Indicators({ id, isMobileDevice }) {
                     ${styles.count}
                   `}
                 />
-                <p className={styles.description} dangerouslySetInnerHTML={{__html: item.text}} />
+                <p
+                  className={`
+                    ${styles.description}
+                    ${idx === 0 && styles.pseudo}
+                  `}
+                  dangerouslySetInnerHTML={{__html: item.text}}
+                />
               </div>
             );
           })

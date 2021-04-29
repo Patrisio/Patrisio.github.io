@@ -3,7 +3,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 330px 16px 0;
+  padding: 200px 16px 0;
   overflow: hidden;
 }
 
@@ -12,6 +12,15 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -10%);
+}
+
+.pseudo::after {
+  content: 'млн';
+  position: absolute;
+  right: 16px;
+  top: -65px;
+  font-size: 25px;
+  color: #2BF12E;
 }
 
 .circlesContainer {
@@ -24,6 +33,7 @@
 }
 
 .description {
+  position: relative;
   color: #fff;
   font-size: 40px;
   font-weight: 700;
@@ -74,10 +84,16 @@
   .description {
     font-size: 20px;
     margin-top: 10px;
+    width: 140px;
   }
 
   .card {
     width: 150px;
+  }
+
+  .pseudo::after {
+    right: -3px;
+    top: -43px;
   }
 }
 
@@ -87,7 +103,7 @@
   }
 
   .indicatorsContainer {
-    padding-top: 78px;
+    padding-top: 105px;
   }
 
   .card {
@@ -96,5 +112,10 @@
 
   .card:nth-child(1) {
     margin-bottom: 20px;
+  }
+
+  .pseudo::after {
+    right: 7px;
+    font-size: 20px;
   }
 }

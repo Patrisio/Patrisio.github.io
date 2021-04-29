@@ -97,6 +97,11 @@
   text-decoration: none;
 }
 
+.sourceText {
+  position: relative;
+  z-index: 999;
+}
+
 .sourcesFlex {
   display: flex;
   justify-content: space-between;
