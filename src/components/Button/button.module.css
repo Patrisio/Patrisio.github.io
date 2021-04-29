@@ -8,6 +8,10 @@
   text-align: center;
 }
 
+.link {
+  text-decoration: none;
+}
+
 .buttonContainer:hover .shadow {
   /* transform: translate(-25%, -25%) skew(47deg, 15deg); */
   box-shadow: 1px 1px 50px #000;

@@ -4,7 +4,11 @@ import Shadow from '../Shadow/Shadow';
 
 export default function Button({ children, classNames, onClick }) {
   return (
-    <a href='#form' onClick={onClick}>
+    <a
+      href='#form'
+      onClick={onClick}
+      className={styles.link}
+    >
       <div
         className={`
           ${styles.buttonContainer}
