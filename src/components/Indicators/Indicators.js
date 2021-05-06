@@ -5,10 +5,10 @@ import { Waypoint } from 'react-waypoint';
 import move from '../../utils/move';
 
 export default function Indicators({ id, isMobileDevice }) {
-  const card1 = useRef(null);
-  const card2 = useRef(null);
-  const card3 = useRef(null);
-  const card4 = useRef(null);
+  let card1 = useRef(null);
+  let card2 = useRef(null);
+  let card3 = useRef(null);
+  let card4 = useRef(null);
   const background = useRef(null);
   const count = useRef(null);
 
@@ -40,41 +40,47 @@ export default function Indicators({ id, isMobileDevice }) {
   ];
 
   const initAnimation = () => {
+    card1.flipTo({to: 50});
+    card2.flipTo({to: 70});
+    card3.flipTo({to: 50});
+    card4.flipTo({to: 5});
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousemove', (e) => move(e, background.current));
+    // count.current.textContent = '99';
+    // console.log(count.current);
+
     const module = typeof window !== `undefined` ? require("../../utils/number-flip") : null;
 
     if (module) {
       const { Flip } = module;
 
-      new Flip({
+      card1 = new Flip({
         node: document.querySelector(`.${styles.dummy1}`),
         from: 99,
-        to: 50,
+        // to: 50,
         duration: 4
       })
-      new Flip({
+      card2 = new Flip({
         node: document.querySelector(`.${styles.dummy2}`),
         from: 99,
-        to: 70,
+        // to: 70,
         duration: 4
       })
-      new Flip({
+      card3 = new Flip({
         node: document.querySelector(`.${styles.dummy3}`),
         from: 99,
-        to: 50,
+        // to: 50,
         duration: 4
       })
-      new Flip({
+      card4 = new Flip({
         node: document.querySelector(`.${styles.dummy4}`),
         from: 99,
-        to: 5,
+        // to: 5,
         duration: 4
       })
     }
-  };
-
-  useEffect(() => {
-    window.addEventListener('mousemove', (e) => move(e, background.current));
-    count.current.value = '99';
   }, []);
 
   return (

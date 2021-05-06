@@ -15,7 +15,7 @@ export default function LoadingPage({ toggleLoading }) {
           toggleLoading(false);
         }
       });
-    }, 0);
+    }, 30);
   }, []);
 
   return (
