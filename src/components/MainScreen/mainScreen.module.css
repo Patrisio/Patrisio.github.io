@@ -85,10 +85,12 @@
 @keyframes scale {
   from {
     transform: scale(0);
+    -webkit-transform:scale(0, 0);
   }
 
   to {
     transform: scale(100%);
+    -webkit-transform:scale(100%, 100%);
   }
 }
 
