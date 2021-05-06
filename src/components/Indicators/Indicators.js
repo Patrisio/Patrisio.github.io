@@ -1,14 +1,15 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import * as styles from './indicators.module.css';
 import dotsBg from '../../images/dots.svg';
 import { Waypoint } from 'react-waypoint';
 import move from '../../utils/move';
 
 export default function Indicators({ id, isMobileDevice }) {
-  let card1 = useRef(null);
-  let card2 = useRef(null);
-  let card3 = useRef(null);
-  let card4 = useRef(null);
+  const [isActive, toggleActive] = useState(false);
+  let card1;
+  let card2;
+  let card3;
+  let card4;
   const background = useRef(null);
   const count = useRef(null);
 
@@ -40,10 +41,14 @@ export default function Indicators({ id, isMobileDevice }) {
   ];
 
   const initAnimation = () => {
-    card1.flipTo({to: 50});
-    card2.flipTo({to: 70});
-    card3.flipTo({to: 50});
-    card4.flipTo({to: 5});
+    if (!isActive) {
+      card1.flipTo({to: 50});
+      card2.flipTo({to: 70});
+      card3.flipTo({to: 50});
+      card4.flipTo({to: 5});
+  
+      toggleActive(true);
+    }
   };
 
   useEffect(() => {
