@@ -53,7 +53,7 @@ export default function InfiniteSlider() {
           return copy;
         });
       }
-    }, 0);
+    }, 20);
   }, []);
 
   return (

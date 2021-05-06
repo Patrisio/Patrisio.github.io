@@ -87,14 +87,14 @@ export default function Charts({ id }) {
   return (
     <div className={styles.chartContainer} id={id}>
       <div className={styles.desktopChart}>
-        <Swiper
+        {/* <Swiper
           spaceBetween={62}
           slidesPerView={2}
           centeredSlides={true}
-        >
+        > */}
           {
             charts.map(({ logo, greenLabelText, whiteLabelText, animationPath }, idx) => (
-              <SwiperSlide key={idx}>
+              // <SwiperSlide key={idx}>
                 <div className={styles.chartSlide}>
                   <div className={styles.left}>
                     <div className={styles.top}>
@@ -157,10 +157,10 @@ export default function Charts({ id }) {
                     </div>
                   </div>
                 </div>
-              </SwiperSlide>
+              // {/* </SwiperSlide> */}
             ))
           }
-        </Swiper>
+        {/* </Swiper> */}
       </div>
 
       <div className={styles.chartsContainerMobile}>

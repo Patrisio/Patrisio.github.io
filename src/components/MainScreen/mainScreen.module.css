@@ -15,6 +15,7 @@
 
 .mainTitle {
   font-size: 113px;
+  height: 226px;
 }
 
 .runCampaign {
@@ -107,6 +108,10 @@
     height: auto;
   }
 
+  .mainTitle {
+    height: 349px;
+  }
+
   .features {
     top: 90px;
   }
@@ -153,6 +158,10 @@
   .runCampaign {
     margin-top: 36px;
   }
+
+  .mainTitle {
+    height: 240px;
+  }
 }
 
 @media screen and (max-width: 630px) {
@@ -162,6 +171,7 @@
 
   .mainTitle {
     font-size: 40px;
+    height: 120px;
   }
 
   .mainTitleType {

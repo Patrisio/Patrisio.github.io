@@ -10,6 +10,7 @@ export default function Indicators({ id, isMobileDevice }) {
   const card3 = useRef(null);
   const card4 = useRef(null);
   const background = useRef(null);
+  const count = useRef(null);
 
   const indicators = [
     {
@@ -73,6 +74,7 @@ export default function Indicators({ id, isMobileDevice }) {
 
   useEffect(() => {
     window.addEventListener('mousemove', (e) => move(e, background.current));
+    count.current.value = '99';
   }, []);
 
   return (
@@ -105,6 +107,7 @@ export default function Indicators({ id, isMobileDevice }) {
                 className={styles.card}
               >
                 <div
+                  ref={count}
                   className={`
                     ${item.className}
                     ${styles.count}

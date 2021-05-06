@@ -1,9 +1,17 @@
 .chartContainer {
   width: 100%;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   margin-top: 80px;
   user-select: none;
-  cursor: grab;
+  cursor: ew-resize;
+}
+
+.desktopChart {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 3000px;
+  transform: translateX(500px);
 }
 
 .slick {
@@ -26,9 +34,6 @@
   border-right: 2px solid #2BF12E;
   padding: 65px 40px 50px;
   min-width: 170px;
-}
-
-.chartSlide:not(:last-child) {
   margin-right: 62px;
 }
 

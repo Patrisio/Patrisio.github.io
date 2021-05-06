@@ -28,10 +28,15 @@ const IndexPage = () => {
   const [isLoading, toggleLoading] = useState(true);
   const [isMobileDevice, setIsMobileDevice] = useState(false);
 
+  const loadHandler = () => {
+    console.log('__LAOD__');
+  };
+
   useEffect(() => {
-    window.version = '1.0.9';
+    window.version = '1.0.10';
     const module = typeof window !== `undefined` ? require("../utils/detector") : null;
     const detect = module.default;
+    document.addEventListener('load', loadHandler);
 
     if (detect.mobile() || detect.tablet() || detect.phone()) {
       setIsMobileDevice(true);
@@ -133,10 +138,10 @@ const IndexPage = () => {
                 ${styles.paragraph3}
                 ${isActive && styles.active}
               `}>
-                <Paragraph text='Syndicate Group - это медиабаинг заряженный на результат. Мы работаем только с качественными источниками трафика, которые приносят максимальную выгоду нашим клиентам.' />
+                <Paragraph text='Syndicate Group - это медиабаинг, заряженный на результат. Мы работаем только с качественными источниками трафика, которые приносят максимальную выгоду нашим клиентам.' />
               </div>
               <div className={styles.mobileParagraphs}>
-                <Paragraph text='Syndicate Group - это медиабаинг заряженный на результат.'/>
+                <Paragraph text='Syndicate Group - это медиабаинг, заряженный на результат.'/>
                 <Paragraph text='Мы работаем только с качественными источниками трафика, которые приносят максимальную выгоду нашим клиентам.'/>
               </div>
             </TextBlock>
