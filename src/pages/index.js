@@ -33,7 +33,7 @@ const IndexPage = () => {
   };
 
   useEffect(() => {
-    window.version = '1.0.14';
+    window.version = '1.0.15';
     const module = typeof window !== `undefined` ? require("../utils/detector") : null;
     const detect = module.default;
     document.addEventListener('load', loadHandler);
