@@ -9,7 +9,7 @@ export default function LoadingPage({ toggleLoading }) {
     const interval = setInterval(() => {
       updateProgress(prev => {
         if (prev < 100) {
-          return ++prev
+          return ++prev;
         } else {
           clearInterval(interval);
           toggleLoading(false);
@@ -30,7 +30,7 @@ export default function LoadingPage({ toggleLoading }) {
 
       <div className={styles.percentageContainer}>
         <span>loading</span>
-        <div className={styles.percentage}>{progress > 0 ? progress : 100}%</div>
+        <div className={styles.percentage}>{progress < 100 ? progress : 100}%</div>
       </div>
     </div>
   );

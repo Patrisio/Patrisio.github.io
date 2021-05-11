@@ -1,5 +1,4 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Shadow from '../Shadow/Shadow';
 
@@ -11,8 +10,6 @@ import mobileChart1 from '../../images/chart-mobile1.svg';
 import mobileChart2 from '../../images/chart-mobile2.svg';
 import mobileChart3 from '../../images/chart-mobile3.svg';
 import mobileChart4 from '../../images/chart-mobile4.svg';
-
-import 'swiper/swiper.scss';
 
 import * as styles from './charts.module.css';
 
@@ -95,7 +92,10 @@ export default function Charts({ id }) {
           {
             charts.map(({ logo, greenLabelText, whiteLabelText, animationPath }, idx) => (
               // <SwiperSlide key={idx}>
-                <div className={styles.chartSlide}>
+                <div
+                  key={idx}
+                  className={styles.chartSlide}
+                >
                   <div className={styles.left}>
                     <div className={styles.top}>
                       <div className={styles.greenTail} />

@@ -193,6 +193,12 @@
     font-size: 18px;
   }
 
+  .button {
+    width: 268px;
+    -webkit-animation: none;
+    animation-name: none;
+  }
+
   .supTitle {
     font-size: 17px;
   }
