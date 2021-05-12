@@ -183,6 +183,7 @@
 @media screen and (max-width: 630px) {
   .mainScreenContainer {
     margin-top: 30px;
+    padding-bottom: 90px;
   }
 
   .mainTitle {
