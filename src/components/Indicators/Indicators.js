@@ -41,14 +41,14 @@ export default function Indicators({ id, isMobileDevice }) {
   ];
 
   const initAnimation = () => {
-    if (!isActive) {
+    // if (!isActive) {
       card1.flipTo({to: 50});
       card2.flipTo({to: 70});
       card3.flipTo({to: 50});
       card4.flipTo({to: 5});
   
       toggleActive(true);
-    }
+    // }
   };
 
   useEffect(() => {
