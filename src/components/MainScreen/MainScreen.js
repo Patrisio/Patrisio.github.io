@@ -22,8 +22,11 @@ export default function MainScreen() {
   useEffect(() => {
     setTimeout(() => {
       type(`<h2 class='${styles.mainTitleType}'>Топовая команда медиабаинга</h2>`, 0, false, '', 'mainTitle');
-    }, 1000)
-    type(`User Acquisition `, 0, false, '', 'supTitle');
+    }, 4000);
+
+    setTimeout(() => {
+      type(`User Acquisition `, 0, false, '', 'supTitle');
+    }, 3000);
   }, []);
 
   useEffect(() => {
