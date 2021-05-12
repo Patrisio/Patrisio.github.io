@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import * as styles from './loadingPage.module.css';
 import logo from "../../images/logo.svg";
 
-export default function LoadingPage({ toggleLoading }) {
+export default function LoadingPage({ toggleLoading, classNames }) {
   const [progress, updateProgress] = useState(0);
 
   useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    
     const interval = setInterval(() => {
       updateProgress(prev => {
         if (prev < 100) {
@@ -13,13 +15,17 @@ export default function LoadingPage({ toggleLoading }) {
         } else {
           clearInterval(interval);
           toggleLoading(false);
+          document.body.style.overflow = 'auto';
         }
       });
     }, 30);
   }, []);
 
   return (
-    <div className={styles.loadingPageContainer}>
+    <div className={`
+      ${styles.loadingPageContainer}
+      ${classNames}
+    `}>
       <div className={styles.logoContainer}>
         <img src={logo} alt='logo-syndicate'/>
       </div>

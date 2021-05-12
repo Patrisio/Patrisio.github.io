@@ -6,10 +6,10 @@ import move from '../../utils/move';
 
 export default function Indicators({ id, isMobileDevice }) {
   const [isActive, toggleActive] = useState(false);
-  let card1;
-  let card2;
-  let card3;
-  let card4;
+  let card1 = useRef(null);
+  let card2 = useRef(null);;
+  let card3 = useRef(null);;
+  let card4 = useRef(null);;
   const background = useRef(null);
   const count = useRef(null);
 
@@ -41,11 +41,12 @@ export default function Indicators({ id, isMobileDevice }) {
   ];
 
   const initAnimation = () => {
+    console.log(card1);
     if (!isActive) {
-      card1.flipTo({to: 50});
-      card2.flipTo({to: 70});
-      card3.flipTo({to: 50});
-      card4.flipTo({to: 5});
+      card1.current.flipTo({to: 50});
+      card2.current.flipTo({to: 70});
+      card3.current.flipTo({to: 50});
+      card4.current.flipTo({to: 5});
   
       toggleActive(true);
     }
@@ -57,35 +58,37 @@ export default function Indicators({ id, isMobileDevice }) {
     // console.log(count.current);
 
     const module = typeof window !== `undefined` ? require("../../utils/number-flip") : null;
-
+    console.log(module);
     if (module) {
+      console.log('HERE');
       const { Flip } = module;
 
-      card1 = new Flip({
+      card1.current = new Flip({
         node: document.querySelector(`.${styles.dummy1}`),
         from: 99,
         // to: 50,
         duration: 4
       })
-      card2 = new Flip({
+      card2.current = new Flip({
         node: document.querySelector(`.${styles.dummy2}`),
         from: 99,
         // to: 70,
         duration: 4
       })
-      card3 = new Flip({
+      card3.current = new Flip({
         node: document.querySelector(`.${styles.dummy3}`),
         from: 99,
         // to: 50,
         duration: 4
       })
-      card4 = new Flip({
+      card4.current = new Flip({
         node: document.querySelector(`.${styles.dummy4}`),
         from: 99,
         // to: 5,
         duration: 4
       })
     }
+    console.log(card1);
   }, []);
 
   return (
