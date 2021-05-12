@@ -92,7 +92,7 @@ export default function Indicators({ id, isMobileDevice }) {
     <>
       <Waypoint
         onEnter={initAnimation}
-        bottomOffset={isMobileDevice ? 1 : 250}
+        bottomOffset={isMobileDevice ? 100 : 250}
       />
 
       <div className={styles.indicatorsContainer} id={id}>
