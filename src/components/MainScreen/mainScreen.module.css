@@ -13,6 +13,11 @@
   text-transform: uppercase;
 }
 
+.title {
+  animation-duration: 1.5s;
+  animation-name: scale;
+}
+
 .mainTitle {
   font-size: 113px;
   height: 226px;
@@ -33,12 +38,12 @@
   width: 209px;
   z-index: 2;
   padding-right: 16px;
-  animation-duration: 1.5s;
-  animation-name: scale;
 }
 
 .description {
   margin-top: 16px;
+  animation-duration: 1.5s;
+  animation-name: scale;
 }
 
 .circlesContainer {
@@ -191,6 +196,8 @@
 
   .description {
     font-size: 18px;
+    animation-name: none;
+    -webkit-animation: none;
   }
 
   .button {
