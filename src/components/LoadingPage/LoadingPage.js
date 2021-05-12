@@ -7,7 +7,7 @@ export default function LoadingPage({ toggleLoading, classNames }) {
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
-    
+
     const interval = setInterval(() => {
       updateProgress(prev => {
         if (prev < 100) {
@@ -16,6 +16,7 @@ export default function LoadingPage({ toggleLoading, classNames }) {
           clearInterval(interval);
           toggleLoading(false);
           document.body.style.overflow = 'auto';
+          window.scroll(0, 0);
         }
       });
     }, 30);

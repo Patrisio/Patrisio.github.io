@@ -41,7 +41,6 @@ export default function Indicators({ id, isMobileDevice }) {
   ];
 
   const initAnimation = () => {
-    console.log(card1);
     if (!isActive) {
       card1.current.flipTo({to: 50});
       card2.current.flipTo({to: 70});
@@ -54,11 +53,9 @@ export default function Indicators({ id, isMobileDevice }) {
 
   useEffect(() => {
     window.addEventListener('mousemove', (e) => move(e, background.current));
-    // count.current.textContent = '99';
-    // console.log(count.current);
 
     const module = typeof window !== `undefined` ? require("../../utils/number-flip") : null;
-    console.log(module);
+
     if (module) {
       console.log('HERE');
       const { Flip } = module;

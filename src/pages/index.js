@@ -11,7 +11,6 @@ import Form from '../components/Form/Form';
 import Footer from '../components/Footer/Footer';
 import InfiniteSlider from '../components/InfiniteSlider/InfiniteSlider';
 import LoadingPage from '../components/LoadingPage/LoadingPage';
-import anim from '../images/anim.json';
 import { Context } from '../context';
 import Charts from '../components/Charts/Charts';
 import Features from '../components/Features/Features';
@@ -28,15 +27,10 @@ const IndexPage = () => {
   const [isLoading, toggleLoading] = useState(true);
   const [isMobileDevice, setIsMobileDevice] = useState(false);
 
-  const loadHandler = () => {
-    console.log('__LAOD__');
-  };
-
   useEffect(() => {
     window.version = '1.0.16';
     const module = typeof window !== `undefined` ? require("../utils/detector") : null;
     const detect = module.default;
-    document.addEventListener('load', loadHandler);
 
     if (detect.mobile() || detect.tablet() || detect.phone()) {
       setIsMobileDevice(true);
