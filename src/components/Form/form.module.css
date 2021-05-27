@@ -12,11 +12,18 @@
   height: 50px;
 }
 
+.formPartFlex {
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .formContent {
+  position: relative;
   transform: translateY(200px);
   display: flex;
   justify-content: space-between;
-  padding: 88px 0 65px;
+  padding: 88px 0 0;
+  margin-bottom: 65px;
   transition: .5s all;
   opacity: 0;
 }
@@ -48,6 +55,11 @@
   align-items: center;
   max-width: 1232px;
   margin: 0 auto;
+}
+
+.buttonBottom {
+  position: absolute;
+  bottom: 0;
 }
 
 .active {
@@ -109,6 +121,11 @@
 
   .inputMobile {
     width: 100% !important;
+  }
+
+  .formPartFlex a {
+    display: block;
+    margin-top: 60px;
   }
 }
 

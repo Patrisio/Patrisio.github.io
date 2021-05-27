@@ -44,7 +44,7 @@ export default function Indicators({ id, isMobileDevice }) {
     if (!isActive) {
       card1.current.flipTo({to: 23});
       card2.current.flipTo({to: 70});
-      card3.current.flipTo({to: 50});
+      card3.current.flipTo({to: 55});
       card4.current.flipTo({to: 5});
   
       toggleActive(true);

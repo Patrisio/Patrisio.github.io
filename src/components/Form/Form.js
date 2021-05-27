@@ -80,40 +80,40 @@ export default function Form({ id, isMobileDevice }) {
             classNames={styles.inputMobile}
           />
           <Input
-            placeholder='Номер Телефона'
-            label='Введите ваш номер телефона'
+            placeholder='Введите ваш telegram'
+            label='Telegram'
+            type='tel'
+            classNames={styles.inputMobile}
+          />
+          <Input
+            placeholder='Введите ваш skype'
+            label='Skype'
             type='tel'
             classNames={styles.inputMobile}
           />
         </div>
 
-        <div className={styles.formPart}>
+        <div className={`
+          ${styles.formPart}
+          ${styles.formPartFlex}
+        `}>
           <Input
-            placeholder='Введите название компании'
-            label='Компания'
+            placeholder='Введите  ваше сообщение...'
+            label='Сообщение'
             classNames={styles.inputMobile}
           />
-          <Input
-            placeholder='Введите вашу страну'
-            label='Страна'
-            classNames={styles.inputMobile}
-          />
-          <Input
-            placeholder='Введите источники трафика'
-            label='Предпочтительный Источник Трафика'
-            classNames={styles.inputMobile}
-          />
+          
+          <Button
+            classNames={`
+              ${styles.button}
+              ${isActive && styles.activeButton}
+              ${styles.buttonBottom}
+            `}
+          >
+            Отправить
+          </Button>
         </div>
       </div>
-      
-        <Button
-          classNames={`
-            ${styles.button}
-            ${isActive && styles.activeButton}
-          `}
-        >
-          Отправить
-        </Button>
       </div>
     </>
   );

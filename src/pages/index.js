@@ -114,7 +114,7 @@ const IndexPage = () => {
 
               <InfiniteSlider />
 
-              <Sources/>
+              {/* <Sources/> */}
 
               <Waypoint
                 onEnter={() => {
