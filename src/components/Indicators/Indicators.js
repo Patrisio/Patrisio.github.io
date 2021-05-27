@@ -15,8 +15,8 @@ export default function Indicators({ id, isMobileDevice }) {
 
   const indicators = [
     {
-      count: 50,
-      text: 'УСТАНОВОК В&nbsp;ГОД',
+      count: 23,
+      text: 'депозитов ежемесячно',
       ref: card1,
       className: styles.dummy1
     },
@@ -42,7 +42,7 @@ export default function Indicators({ id, isMobileDevice }) {
 
   const initAnimation = () => {
     if (!isActive) {
-      card1.current.flipTo({to: 50});
+      card1.current.flipTo({to: 23});
       card2.current.flipTo({to: 70});
       card3.current.flipTo({to: 50});
       card4.current.flipTo({to: 5});

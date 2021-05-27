@@ -15,11 +15,11 @@
 }
 
 .pseudo::after {
-  content: 'млн';
+  content: 'k';
   position: absolute;
-  right: 16px;
-  top: -65px;
-  font-size: 25px;
+  right: 40px;
+  top: -77px;
+  font-size: 40px;
   color: #2BF12E;
 }
 
@@ -92,8 +92,8 @@
   }
 
   .pseudo::after {
-    right: -3px;
-    top: -43px;
+    right: 20px;
+    top: -55px;
   }
 }
 
@@ -115,7 +115,8 @@
   }
 
   .pseudo::after {
-    right: 7px;
-    font-size: 20px;
+    right: 23px;
+    top: -47px;
+    font-size: 30px;
   }
 }

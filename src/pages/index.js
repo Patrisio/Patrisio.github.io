@@ -62,11 +62,12 @@ const IndexPage = () => {
                   <TextBlock>
                     <div className={styles.titleContainer}>
                       <Title
-                        text='Мы дадим заряженных людей вокруг'
+                        text='Клиенты - наше все'
                       />
                     </div>
                     <div className={styles.paragraphContainer} id='ourpros'>
-                      <Paragraph text='Мы делаем огромные объемы трафика в сутки, обгоняя многих конкурентов. Наш принцип - максимально инвестировать в инфраструктуру, брать лучших и надежных людей. Мы семья, которая помогает друг другу во всем.'/>
+                      <Paragraph text='Наша Главная цель - это привлекать новых пользователей для наших клиентов, которые окупятся в максимально короткий срок.'/>
+                      <Paragraph text='Мы ценим долгосрочное сотрудничество и стремимся стать стратегическим партнером для каждого из наших клиентов.'/>
                     </div>
                   </TextBlock>
                 </div>
@@ -121,27 +122,28 @@ const IndexPage = () => {
                 }}
                 bottomOffset={isMobileDevice ? 0 : 500}
               />
-
-              <TextBlock>
-                <div className={`
-                  ${styles.title3}
-                  ${isActive && styles.active}
-                `}>
-                  <Title
-                    text='идеальное решение для вашего бизнеса'
-                  />
-                </div>
-                <div className={`
-                  ${styles.paragraph3}
-                  ${isActive && styles.active}
-                `}>
-                  <Paragraph text='Syndicate Group - это медиабаинг, заряженный на результат. Мы работаем только с качественными источниками трафика, которые приносят максимальную выгоду нашим клиентам.' />
-                </div>
-                <div className={styles.mobileParagraphs}>
-                  <Paragraph text='Syndicate Group - это медиабаинг, заряженный на результат.'/>
-                  <Paragraph text='Мы работаем только с качественными источниками трафика, которые приносят максимальную выгоду нашим клиентам.'/>
-                </div>
-              </TextBlock>
+                <TextBlock
+                  classNames={styles.wrapperTextBlock}
+                >
+                  <div className={`
+                    ${styles.title3}
+                    ${isActive && styles.active}
+                  `}>
+                    <Title
+                      text='Партнерство с&nbsp;независимыми арбитражными командами'
+                    />
+                  </div>
+                  <div className={`
+                    ${styles.paragraph3}
+                    ${isActive && styles.active}
+                  `}>
+                    <Paragraph text='Мы готовы обсуждать сотрудничество с целыми командами, брать их под свое крыло и давать всю инфраструктуру для того, чтобы делать х10 от того, что они делают сейчас.' />
+                  </div>
+                  <div className={styles.mobileParagraphs}>
+                    <Paragraph text='Мы готовы обсуждать сотрудничество с целыми командами, брать их под свое крыло и давать всю инфраструктуру для того, чтобы делать х10 от того, что они делают сейчас.'/>
+                    {/* <Paragraph text='Мы работаем только с качественными источниками трафика, которые приносят максимальную выгоду нашим клиентам.'/> */}
+                  </div>
+                </TextBlock>
 
               <Charts id='cases' />
 

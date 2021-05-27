@@ -45,7 +45,7 @@ export default function MainScreen() {
           <Title text='key features' size='29px' />
         </div>
         <div className={styles.description}>
-          <Paragraph text='Одна из самых крупных команд в мире, специализирующаяся на вертикали iGaming.' />
+          <Paragraph text='Крупнейшее агентство в Европе,специализирующееся на iGaming вертикали.' />
         </div>
       </div>
 

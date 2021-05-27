@@ -43,12 +43,12 @@ export default function Features({ isMobileDevice }) {
       type(`<h2 class='${styles.description}'>Креативный отдел знает, с помощью каких механик привлечь и зацепить вашу целевую аудиторию.</h2>`, 0, false, '', 'description-1', 20);
       type(`<h2 class='${styles.description}'>Собственная антифрод система защищает наших клиентов от мошенничества и некачественного трафика.</h2>`, 0, false, '', 'description-2', 20);
       type(`<h2 class='${styles.description}'>Технологии по оптимизации трафика позволяют получить максимальную прибыль от инвестиций.</h2>`, 0, false, '', 'description-3', 20);
-      type(`<h2 class='${styles.description}'>Вас удивят наша преданность, высокое качество и полученные результаты.</h2>`, 0, false, '', 'description-4', 20);
+      type(`<h2 class='${styles.description}'>Мы команда единомышленников. Каждый из нас заряжен на результат и хочет достичь больших целей.</h2>`, 0, false, '', 'description-4', 20);
       
       type(`<div class='${styles.mainTitle}'>Креатив</div>`, 0, false, '', 'mainTitle-1', 80);
       type(`<div class='${styles.mainTitle}'>Антифрод</div>`, 0, false, '', 'mainTitle-2', 80);
       type(`<div class='${styles.mainTitle}'>Автоматизация</div>`, 0, false, '', 'mainTitle-3', 80);
-      type(`<div class='${styles.mainTitle}'>Признание</div>`, 0, false, '', 'mainTitle-4', 80);
+      type(`<div class='${styles.mainTitle}'>syndicate family</div>`, 0, false, '', 'mainTitle-4', 80);
   
       toggleLine(true);
     }
