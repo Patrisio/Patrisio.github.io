@@ -11,7 +11,39 @@ import * as styles from './form.module.css';
 
 export default function Form({ id, isMobileDevice }) {
   const [isActive, toggleActive] = useState(false);
+  const [formData, updateFormData] = useState({
+    name: '',
+    email: '',
+    telegram: '',
+    skype: '',
+    message: '',
+  });
 
+  const getFieldName = (fieldName) => {
+    switch (fieldName) {
+      case 'name':
+        return 'Имя';
+      case 'email':
+        return 'E-mail';
+      case 'telegram':
+        return 'Телеграм';
+      case 'skype':
+        return 'Skype';
+      case 'message':
+        return 'Сообщение';
+    }
+  };
+
+  const fillFormData = (e, fieldName) => updateFormData(prev => ({ ...prev, [fieldName]: e.target.value }));
+  const sendFormData = () => {
+    const formDataEntities = Object.entries(formData);
+    const formattedFormData = formDataEntities.map(entity => `${getFieldName(entity[0])}: ${entity[1]} |`).join(' ');
+
+    const token = '1817984401:AAFHuROfIEIZcxLFgTZeYNO4EEhjdd4Dd2Y';
+    const chatId = '-1001286048560';
+
+    fetch(`https://api.telegram.org/bot${token}/sendMessage?text=${formattedFormData}&chat_id=${chatId}`);
+  };
   return (
     <>
      <Waypoint
@@ -72,24 +104,26 @@ export default function Form({ id, isMobileDevice }) {
             placeholder='Введите ваше имя'
             label='Имя'
             classNames={styles.inputMobile}
+            onChange={(e) => fillFormData(e, 'name')}
           />
           <Input
             placeholder='Введите ваш e-mail'
             label='E-Mail'
             type='email'
             classNames={styles.inputMobile}
+            onChange={(e) => fillFormData(e, 'email')}
           />
           <Input
             placeholder='Введите ваш telegram'
             label='Telegram'
-            type='tel'
             classNames={styles.inputMobile}
+            onChange={(e) => fillFormData(e, 'telegram')}
           />
           <Input
             placeholder='Введите ваш skype'
             label='Skype'
-            type='tel'
             classNames={styles.inputMobile}
+            onChange={(e) => fillFormData(e, 'skype')}
           />
         </div>
 
@@ -101,6 +135,7 @@ export default function Form({ id, isMobileDevice }) {
             placeholder='Введите  ваше сообщение...'
             label='Сообщение'
             classNames={styles.inputMobile}
+            onChange={(e) => fillFormData(e, 'message')}
           />
           
           <Button
@@ -109,6 +144,7 @@ export default function Form({ id, isMobileDevice }) {
               ${isActive && styles.activeButton}
               ${styles.buttonBottom}
             `}
+            onClick={sendFormData}
           >
             Отправить
           </Button>

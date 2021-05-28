@@ -5,7 +5,8 @@ export default function Input({
   placeholder,
   label,
   type = 'text',
-  classNames
+  classNames,
+  onChange
 }) {
   return (
     <div className={styles.inputContainer}>
@@ -15,6 +16,7 @@ export default function Input({
         placeholder={placeholder}
         type={type}
         required
+        onChange={onChange}
       />
     </div>
   );
