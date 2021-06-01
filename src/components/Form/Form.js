@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Waypoint } from 'react-waypoint';
 
-import Title from '../Title/Title';
-import Paragraph from '../Paragraph/Paragraph';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
+import Thumb from '../Thumb/Thumb';
 
 import type from '../../utils/type';
 import * as styles from './form.module.css';
 
 export default function Form({ id, isMobileDevice }) {
   const [isActive, toggleActive] = useState(false);
+  const [isDataFormSent, toggleFormState] = useState(false);
   const [formData, updateFormData] = useState({
     name: '',
     email: '',
@@ -43,10 +43,11 @@ export default function Form({ id, isMobileDevice }) {
     const chatId = '-1001286048560';
 
     fetch(`https://api.telegram.org/bot${token}/sendMessage?text=${formattedFormData}&chat_id=${chatId}`);
+    toggleFormState(true);;
   };
   return (
     <>
-     <Waypoint
+      <Waypoint
         onEnter={() => {
           if (!isActive) {
             type(
@@ -58,7 +59,11 @@ export default function Form({ id, isMobileDevice }) {
           }
         }}
       />
-
+    {
+      isDataFormSent ?
+      <Thumb
+        toggleFormState={toggleFormState}
+      /> :
       <div className={styles.formContainer} id={id}>
         <div className={styles.titleContainer}>
           <div className={styles.title}>
@@ -151,6 +156,7 @@ export default function Form({ id, isMobileDevice }) {
         </div>
       </div>
       </div>
+      }
     </>
   );
 }

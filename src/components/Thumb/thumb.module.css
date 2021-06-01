@@ -1,0 +1,99 @@
+.thumbWrapper {
+  max-width: 468px;
+  width: 310px;
+  margin: 0 auto;
+  padding-top: 150px;
+}
+
+.thumbContent {
+  position: relative;
+  text-align: center;
+}
+
+.thumbTitle {
+  margin: 34px 0 16px;
+  font-size: 28px;
+}
+
+.thumbParagraph {
+  font-size: 16px;
+}
+
+.thumbButton {
+  margin-top: 36px;
+  max-width: 200px;
+  width: 200px;
+}
+
+.greenLine {
+  position: absolute;
+  bottom: -82px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background:  #2BF12E;
+}
+
+.greenLine::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  bottom: 24px;
+  transform: rotate(90deg);
+  width: 50px;
+  background: #2BF12E;
+  height: 2px;
+}
+
+.greenLine::after {
+  content: '';
+  position: absolute;
+  right: -24px;
+  bottom: 24px;
+  transform: rotate(90deg);
+  width: 50px;
+  background: #2BF12E;
+  height: 2px;
+}
+
+.shadowRight,
+.shadowLeft {
+  top: -122px;
+  height: 100px;
+  width: 19px;
+  z-index: 99;
+}
+
+.shadowLeft {
+  left: -12px;
+}
+
+.shadowRight {
+  left: calc(100% - 12px);
+}
+
+@media screen and (max-width: 1050px) {
+  .thumbWrapper {
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .thumbWrapper {
+    padding-bottom: 100px;
+  }
+
+  .thumbTitle {
+    font-size: 24px;
+  }
+
+  .thumbParagraph {
+    font-size: 14px;
+  }
+
+  .greenLine {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+  }
+}
