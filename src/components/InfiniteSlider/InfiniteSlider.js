@@ -36,7 +36,7 @@ export default function InfiniteSlider() {
     // client9,
     // client10,
     // client11,
-    client12,
+    // client12,
     client13,
     client1_1,
     client1_3,
@@ -60,7 +60,7 @@ export default function InfiniteSlider() {
           return copy;
         });
       }
-    }, 5);
+    }, 15);
   }, []);
 
   return (
