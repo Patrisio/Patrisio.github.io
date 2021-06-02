@@ -20,7 +20,8 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        background_color: '#000000',
+        icon: "src/images/favicon.png",
       },
     },
     "gatsby-plugin-sharp",
