@@ -49,11 +49,11 @@ export default function MainScreen() {
         </div>
       </div>
 
-      <div className={styles.runCampaign}>
+      {/* <div className={styles.runCampaign}>
         <Button classNames={styles.button}>
           Запустить кампанию
         </Button>
-      </div>
+      </div> */}
 
       <div className={styles.dotsBg}>
         <img src={dotsBg} alt='dot' ref={background}/>

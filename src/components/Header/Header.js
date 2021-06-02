@@ -39,11 +39,11 @@ export default function Header() {
 
         <Burger />
 
-        <Button
+        {/* <Button
           classNames={styles.button}
         >
           Запустить кампанию
-        </Button>
+        </Button> */}
       </div>
     </div>
   )

@@ -155,9 +155,9 @@ export default function Features({ isMobileDevice }) {
             {/* <Paragraph text='Вас удивят наша преданность, высокое качество и полученные результаты.' /> */}
             <h2 className={styles.description} style={{ height: '100px' }} id='description-4' />
           </div>
-          <Button classNames={styles.button}>
+          {/* <Button classNames={styles.button}>
             Запустить кампанию
-          </Button>
+          </Button> */}
         </div>
       </div>
     </>

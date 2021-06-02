@@ -50,7 +50,7 @@ export default function InfiniteSlider() {
       positionX--;
       innerSlider.current.style.transform = `translateX(${positionX}px)`;
 
-      if (positionX % 2000 === 0) {
+      if (positionX % 1000 === 0) {
         updateSlides(prev => {
           const copy = prev.slice();
           const removedSlides = copy.slice(0, 10);
