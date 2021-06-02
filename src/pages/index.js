@@ -120,7 +120,7 @@ const IndexPage = () => {
                 onEnter={() => {
                   toggleActive(true);
                 }}
-                bottomOffset={isMobileDevice ? 0 : 500}
+                bottomOffset={isMobileDevice ? 0 : 150}
               />
                 <TextBlock
                   classNames={styles.wrapperTextBlock}
