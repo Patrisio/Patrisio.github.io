@@ -6,16 +6,18 @@ export default function Input({
   label,
   type = 'text',
   classNames,
-  onChange
+  onChange,
+  required,
+  hasError
 }) {
   return (
-    <div className={styles.inputContainer}>
+    <div className={styles.inputContainer} data-required={required}>
       <label className={styles.label}>{ label }</label>
       <input
-        className={`${styles.input} ${classNames}`}
+        className={`${styles.input} ${classNames} ${hasError && styles.error}`}
         placeholder={placeholder}
         type={type}
-        required
+        required={required}
         onChange={onChange}
       />
     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Waypoint } from 'react-waypoint';
 
 import Input from '../Input/Input';
@@ -9,15 +9,36 @@ import type from '../../utils/type';
 import * as styles from './form.module.css';
 
 export default function Form({ id, isMobileDevice }) {
+  const initialFormState = {
+    name: {
+      value: '',
+      required: true,
+      error: false,
+    },
+    email: {
+      value: '',
+      required: true,
+      error: false,
+    },
+    telegram: {
+      value: '',
+      required: true,
+      error: false,
+    },
+    skype: {
+      value: '',
+      required: true,
+      error: false,
+    },
+    message: {
+      value: '',
+      required: false,
+      error: false,
+    },
+  };
   const [isActive, toggleActive] = useState(false);
   const [isDataFormSent, toggleFormState] = useState(false);
-  const [formData, updateFormData] = useState({
-    name: '',
-    email: '',
-    telegram: '',
-    skype: '',
-    message: '',
-  });
+  const [formData, updateFormData] = useState(initialFormState);
 
   const getFieldName = (fieldName) => {
     switch (fieldName) {
@@ -34,17 +55,70 @@ export default function Form({ id, isMobileDevice }) {
     }
   };
 
-  const fillFormData = (e, fieldName) => updateFormData(prev => ({ ...prev, [fieldName]: e.target.value }));
+  const fillFormData = (e, fieldName) => updateFormData(prev => {
+    const prevState = prev[fieldName];
+    return {
+      ...prev,
+      [fieldName]: {
+        ...prevState,
+        value: e.target.value
+      },
+    };
+  });
+
+  const checkFormFields = () => {
+    let updatedState = {};
+    const formFields = Object.keys(formData).slice();
+    let hasErrors = false;
+    formFields.forEach((fieldName) => {
+      const fieldData = formData[fieldName];
+
+      if (fieldData.value.length === 0 && fieldData.required) {
+        hasErrors = true;
+        updatedState[fieldName] = {
+          ...fieldData,
+          error: true,
+        };
+      } else {
+        updatedState[fieldName] = {
+          ...fieldData,
+          error: false,
+        };
+      }
+    });
+
+    return {
+      hasErrors,
+      updatedState,
+    };
+  };
+
   const sendFormData = () => {
     const formDataEntities = Object.entries(formData);
-    const formattedFormData = formDataEntities.map(entity => `${getFieldName(entity[0])}: ${entity[1]} |`).join(' ');
 
     const token = '1817984401:AAFHuROfIEIZcxLFgTZeYNO4EEhjdd4Dd2Y';
     const chatId = '-1001286048560';
 
+    const { hasErrors, updatedState } = checkFormFields();
+
+    if (hasErrors) {
+      updateFormData(updatedState);
+      return;
+    }
+
+    const newObj = {};
+    formDataEntities.forEach((entity) => {
+      const key = entity[0];
+      const value = entity[1];
+      newObj[key] = value.value;
+    });
+    const formattedFormData = Object.entries(newObj).map(entity => `${getFieldName(entity[0])}: ${entity[1]} |`).join(' ');
+
     fetch(`https://api.telegram.org/bot${token}/sendMessage?text=${formattedFormData}&chat_id=${chatId}`);
-    toggleFormState(true);;
+    toggleFormState(true);
+    updateFormData(initialFormState);
   };
+
   return (
     <>
       <Waypoint
@@ -110,6 +184,8 @@ export default function Form({ id, isMobileDevice }) {
             label='Имя'
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'name')}
+            required
+            hasError={formData.name.error}
           />
           <Input
             placeholder='Введите ваш e-mail'
@@ -117,18 +193,24 @@ export default function Form({ id, isMobileDevice }) {
             type='email'
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'email')}
+            required
+            hasError={formData.email.error}
           />
           <Input
             placeholder='Введите ваш telegram'
             label='Telegram'
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'telegram')}
+            required
+            hasError={formData.telegram.error}
           />
           <Input
             placeholder='Введите ваш skype'
             label='Skype'
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'skype')}
+            required
+            hasError={formData.skype.error}
           />
         </div>
 
@@ -141,6 +223,7 @@ export default function Form({ id, isMobileDevice }) {
             label='Сообщение'
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'message')}
+            hasError={formData.message.error}
           />
           
           <Button

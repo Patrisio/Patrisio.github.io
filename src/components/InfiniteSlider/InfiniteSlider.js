@@ -13,6 +13,10 @@ import client10 from '../../images/client10.svg';
 import client11 from '../../images/client11.svg';
 import client12 from '../../images/client12.svg';
 import client13 from '../../images/client13.svg';
+import client1_1 from '../../images/client1_1.svg';
+import client1_2 from '../../images/client1_2.svg';
+import client1_3 from '../../images/client1_3.svg';
+import client1_4 from '../../images/client1_4.svg';
 
 import * as styles from './infiniteSlider.module.css';
 
@@ -24,16 +28,19 @@ export default function InfiniteSlider() {
     client1,
     client2,
     client3,
-    client4,
-    client5,
+    // client4,
+    // client5,
     client6,
-    client7,
-    client8,
-    client9,
-    client10,
-    client11,
+    // client7,
+    // client8,
+    // client9,
+    // client10,
+    // client11,
     client12,
-    client13
+    client13,
+    client1_1,
+    client1_3,
+    client1_4,
   ];
 
   const [slidesList, updateSlides] = useState(slides);
@@ -53,7 +60,7 @@ export default function InfiniteSlider() {
           return copy;
         });
       }
-    }, 20);
+    }, 5);
   }, []);
 
   return (

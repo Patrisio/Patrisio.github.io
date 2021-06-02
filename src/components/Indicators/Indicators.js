@@ -57,7 +57,6 @@ export default function Indicators({ id, isMobileDevice }) {
     const module = typeof window !== `undefined` ? require("../../utils/number-flip") : null;
 
     if (module) {
-      console.log('HERE');
       const { Flip } = module;
 
       card1.current = new Flip({
@@ -85,7 +84,6 @@ export default function Indicators({ id, isMobileDevice }) {
         duration: 4
       })
     }
-    console.log(card1);
   }, []);
 
   return (

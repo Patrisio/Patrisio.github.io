@@ -17,11 +17,15 @@
   font-size: 16px;
 }
 
+.input.error {
+  border-bottom: 1px solid #EF2E2E;
+}
+
 .inputContainer {
   position: relative;
 }
 
-.inputContainer::after {
+.inputContainer[data-required=true]::after {
   content: '*';
   position: absolute;
   right: 0;
