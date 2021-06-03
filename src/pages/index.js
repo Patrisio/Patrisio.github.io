@@ -39,6 +39,10 @@ const IndexPage = () => {
 
   return (
     <Context.Provider value={{ lang, changeLang }}>
+    <Helmet>
+      <title>SYNDICATE GROUP</title>
+    </Helmet>
+
       <main style={{ fontFamily: '"JetBrains Mono", monospace', background: '#0C1201' }}>
         {
           <>

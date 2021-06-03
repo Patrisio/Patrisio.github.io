@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "syndicate",
+    title: "SYNDICATE GROUP",
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -20,6 +20,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: "SYNDICATE GROUP",
         background_color: '#000000',
         icon: "src/images/favicon.png",
       },

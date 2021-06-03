@@ -61,9 +61,9 @@ export default function Features({ isMobileDevice }) {
         bottomOffset={isMobileDevice ? 0 : 500}
       />
 
-      <div className={styles.mobileParagraph}>
+      {/* <div className={styles.mobileParagraph}>
         <Paragraph text='Мы не любим душных типов, которые не хотят “палить&nbsp;фишечки”' />
-      </div>
+      </div> */}
       
       <div className={styles.featuresContainer}>
         {
@@ -74,9 +74,9 @@ export default function Features({ isMobileDevice }) {
               className={styles.externalContainer}
               key={idx}
             >
-              <div className={styles.paragraphTop}>
+              {/* <div className={styles.paragraphTop}>
                 <Paragraph text='Мы не любим душных типов, которые не хотят “палить&nbsp;фишечки”' />
-              </div>
+              </div> */}
               <div
                 className={styles.featureCard}
               >
