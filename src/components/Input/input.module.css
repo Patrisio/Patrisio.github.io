@@ -37,3 +37,9 @@
 .inputContainer:not(:last-child) {
   margin-bottom: 20px;
 }
+
+@media screen and (max-width: 1150px) {
+  .input[disabled] {
+    display: none;
+  }
+}

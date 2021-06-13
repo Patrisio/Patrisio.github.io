@@ -149,7 +149,7 @@ const IndexPage = () => {
                   </div>
                 </TextBlock>
 
-              <Charts id='cases' />
+              {/* <Charts id='cases' /> */}
 
               <Form id='form' isMobileDevice={isMobileDevice}/>
 

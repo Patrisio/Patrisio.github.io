@@ -42,11 +42,11 @@
   transform: translateY(-3px) rotate(-45deg);
 }
 
-.mobileMenu{
+.mobileMenu {
   visibility: hidden;
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100vw;
   height: 100vh;
   background: #0C1201;

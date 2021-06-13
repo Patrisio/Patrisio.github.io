@@ -8,7 +8,8 @@ export default function Input({
   classNames,
   onChange,
   required,
-  hasError
+  hasError,
+  disabled
 }) {
   return (
     <div className={styles.inputContainer} data-required={required}>
@@ -19,6 +20,7 @@ export default function Input({
         type={type}
         required={required}
         onChange={onChange}
+        disabled={disabled}
       />
     </div>
   );

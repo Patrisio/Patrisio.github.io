@@ -28,10 +28,14 @@
 
 .featureCard {
   position: relative;
-  width: 229px;
-  margin-right: 65px;
+  /* width: 229px; */
+  max-width: 304px;
+  /* margin-right: 65px; */
   padding: 0 23px 72px;
-  height: fit-content;
+}
+
+.featureCard:not(:last-child) {
+  margin-right: 30px;
 }
 
 .greenLine {
@@ -104,9 +108,9 @@
   margin: 16px 0 80px;
 }
 
-.externalContainer {
+/* .externalContainer {
   width: 280px;
-}
+} */
 
 .paragraphTop {
   margin-bottom: 97px;

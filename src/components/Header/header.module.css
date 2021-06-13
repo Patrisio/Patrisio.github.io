@@ -33,10 +33,13 @@
   flex-grow: 1;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .links {
-  margin: 0 0 0 auto;
+  margin: 0 auto;
 }
 
 .button {
@@ -51,6 +54,14 @@
 
   .links {
     margin: 0 0 0 auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .navigation {
+    position: static;
+    margin-left: auto;
+    transform: none;
   }
 }
 

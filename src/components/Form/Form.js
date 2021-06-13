@@ -20,16 +20,6 @@ export default function Form({ id, isMobileDevice }) {
       required: true,
       error: false,
     },
-    telegram: {
-      value: '',
-      required: true,
-      error: false,
-    },
-    skype: {
-      value: '',
-      required: true,
-      error: false,
-    },
     message: {
       value: '',
       required: false,
@@ -45,7 +35,7 @@ export default function Form({ id, isMobileDevice }) {
       case 'name':
         return 'Имя';
       case 'email':
-        return 'E-mail';
+        return 'E-mail/Телеграм/Skype';
       case 'telegram':
         return 'Телеграм';
       case 'skype':
@@ -95,7 +85,7 @@ export default function Form({ id, isMobileDevice }) {
 
   const sendFormData = () => {
     const formDataEntities = Object.entries(formData);
-
+    console.log(formData);
     const token = '1817984401:AAFHuROfIEIZcxLFgTZeYNO4EEhjdd4Dd2Y';
     const chatId = '-1001286048560';
 
@@ -113,7 +103,7 @@ export default function Form({ id, isMobileDevice }) {
       newObj[key] = value.value;
     });
     const formattedFormData = Object.entries(newObj).map(entity => `${getFieldName(entity[0])}: ${entity[1]} |`).join(' ');
-
+    console.log(formattedFormData);
     fetch(`https://api.telegram.org/bot${token}/sendMessage?text=${formattedFormData}&chat_id=${chatId}`);
     toggleFormState(true);
     updateFormData(initialFormState);
@@ -125,11 +115,11 @@ export default function Form({ id, isMobileDevice }) {
         onEnter={() => {
           if (!isActive) {
             type(
-              `<div class='${styles.mainTitle}'>Хочешь присоединиться к лидерам рынка?</div>`,
+              `<div class='${styles.mainTitle}'>Интересно?</div>`,
               0, false, '', 'form-1', 25);
             type(
-              `<h2 class='${styles.description}'>Для нас это не тупо бабки.</h2>`,
-              0, false, '', 'form-2', 50);
+              `<div class='${styles.mainTitle}'>Свяжитесь с нами</div>`,
+              0, false, '', 'form-2', 25);
           }
         }}
       />
@@ -141,9 +131,6 @@ export default function Form({ id, isMobileDevice }) {
       <div className={styles.formContainer} id={id}>
         <div className={styles.titleContainer}>
           <div className={styles.title}>
-            {/* <Title
-              text='Хочешь присоединиться к лидерам рынка?'
-            /> */}
             <div
               className={`
                 ${styles.mainTitle}
@@ -151,12 +138,15 @@ export default function Form({ id, isMobileDevice }) {
               `}
               id='form-1'
             />
+             <div
+              className={`
+                ${styles.mainTitle}
+                ${styles.form1}
+              `}
+              id='form-2'
+            />
           </div>
           <div className={styles.paragraph}>
-            {/* <Paragraph
-              text='Для нас это не тупо бабки.'
-              size='16px'
-            /> */}
             <h2
               className={`
                 ${styles.description}
@@ -188,29 +178,13 @@ export default function Form({ id, isMobileDevice }) {
             hasError={formData.name.error}
           />
           <Input
-            placeholder='Введите ваш e-mail'
-            label='E-Mail'
+            placeholder='Введите ваш E-mail / Telegram / Skype'
+            label='E-mail / Telegram / Skype'
             type='email'
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'email')}
             required
             hasError={formData.email.error}
-          />
-          <Input
-            placeholder='Введите ваш telegram'
-            label='Telegram'
-            classNames={styles.inputMobile}
-            onChange={(e) => fillFormData(e, 'telegram')}
-            required
-            hasError={formData.telegram.error}
-          />
-          <Input
-            placeholder='Введите ваш skype'
-            label='Skype'
-            classNames={styles.inputMobile}
-            onChange={(e) => fillFormData(e, 'skype')}
-            required
-            hasError={formData.skype.error}
           />
         </div>
 
@@ -224,6 +198,14 @@ export default function Form({ id, isMobileDevice }) {
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'message')}
             hasError={formData.message.error}
+          />
+
+          <Input
+            classNames={`
+              ${styles.inputMobile}
+              ${styles.inputHeight}
+            `}
+            disabled
           />
           
           <Button

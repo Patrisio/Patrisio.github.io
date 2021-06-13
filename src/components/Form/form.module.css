@@ -5,11 +5,15 @@
 }
 
 .form1 {
-  height: 126px
+  margin-bottom: 20px;
 }
 
 .form2 {
   height: 50px;
+}
+
+.inputHeight {
+  height:  65px;
 }
 
 .formPartFlex {
@@ -59,7 +63,8 @@
 
 .buttonBottom {
   position: absolute;
-  bottom: 0;
+  right: 0;
+  margin-top: 30px;
 }
 
 .active {
@@ -126,6 +131,12 @@
   .formPartFlex a {
     display: block;
     margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .buttonBottom {
+    margin-top: 0;
   }
 }
 
