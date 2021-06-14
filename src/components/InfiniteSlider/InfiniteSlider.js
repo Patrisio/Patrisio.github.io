@@ -17,6 +17,10 @@ import client1_1 from '../../images/client1_1.svg';
 import client1_2 from '../../images/client1_2.svg';
 import client1_3 from '../../images/client1_3.svg';
 import client1_4 from '../../images/client1_4.svg';
+import client1_5 from '../../images/joom.svg';
+import client1_6 from '../../images/aliexpress.svg';
+import client1_7 from '../../images/gett.svg';
+import client1_8 from '../../images/igg.svg';
 
 import * as styles from './infiniteSlider.module.css';
 
@@ -41,6 +45,10 @@ export default function InfiniteSlider() {
     client1_1,
     client1_3,
     client1_4,
+    client1_5,
+    client1_6,
+    client1_7,
+    client1_8,
   ];
 
   const [slidesList, updateSlides] = useState(slides);

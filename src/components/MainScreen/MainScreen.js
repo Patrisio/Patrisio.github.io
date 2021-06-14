@@ -45,7 +45,7 @@ export default function MainScreen() {
           <Title text='key features' size='29px' />
         </div>
         <div className={styles.description}>
-          <Paragraph text='Крупнейшее агентство в Европе,специализирующееся на iGaming вертикали.' />
+          <Paragraph text='Крупнейшее Performance marketing агентство в Европе, по версии Apps-flyer' />
         </div>
       </div>
 

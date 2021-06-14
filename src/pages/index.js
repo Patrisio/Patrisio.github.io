@@ -78,7 +78,7 @@ const IndexPage = () => {
 
                 <Features isMobileDevice={isMobileDevice} />
 
-                <Waypoint
+                {/* <Waypoint
                   onEnter={() => {
                     if (!isActive) {
                       const speed = isMobileDevice ? 10 : 20;
@@ -87,12 +87,12 @@ const IndexPage = () => {
                         0, false, '', 'index-1', speed);
                     }
                   }}
-                />
-                <TextBlock>
+                /> */}
+                {/* <TextBlock>
                   <div className={styles.paragraph2}>
                     <h2 className={styles.description} style={{ height: '75px' }} id='index-1' />
                   </div>
-                </TextBlock>
+                </TextBlock> */}
               </div>
 
               <Waypoint
@@ -101,9 +101,9 @@ const IndexPage = () => {
                     type(
                       `<div class='${styles.titleFlex}'>наши клиенты Нереально амбициозные</div>`,
                       0, false, '', 'index-2', 20);
-                    type(
-                      `<h2 class='${styles.paragraphFlex}'>Мы отслеживаем более 1 миллиона коммерческих кликов через наших клиентов ежемесячно.</h2>`,
-                      0, false, '', 'index-3', 20); 
+                    // type(
+                    //   `<h2 class='${styles.paragraphFlex}'>Мы отслеживаем более 1 миллиона коммерческих кликов через наших клиентов ежемесячно.</h2>`,
+                    //   0, false, '', 'index-3', 20); 
                   }
                 }}
               />
@@ -111,9 +111,9 @@ const IndexPage = () => {
                 <div className={styles.titleFlex} id='clients'>
                   <div className={styles.titleFlex} id='index-2' />
                 </div>
-                <div className={styles.paragraphFlex}>
+                {/* <div className={styles.paragraphFlex}>
                   <h2 className={styles.paragraphFlex} id='index-3' />
-                </div>
+                </div> */}
               </TextBlock>
 
               <InfiniteSlider />
@@ -145,7 +145,6 @@ const IndexPage = () => {
                   </div>
                   <div className={styles.mobileParagraphs}>
                     <Paragraph text='Мы готовы обсуждать сотрудничество с целыми командами, брать их под свое крыло и давать всю инфраструктуру для того, чтобы делать х10 от того, что они делают сейчас.'/>
-                    {/* <Paragraph text='Мы работаем только с качественными источниками трафика, которые приносят максимальную выгоду нашим клиентам.'/> */}
                   </div>
                 </TextBlock>
 
