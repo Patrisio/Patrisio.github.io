@@ -3,22 +3,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import client1 from '../../images/client1.svg';
 import client2 from '../../images/client2.svg';
 import client3 from '../../images/client3.svg';
-import client4 from '../../images/client4.svg';
-import client5 from '../../images/client5.svg';
 import client6 from '../../images/client6.svg';
-import client7 from '../../images/client7.svg';
-import client8 from '../../images/client8.svg';
-import client9 from '../../images/client9.svg';
-import client10 from '../../images/client10.svg';
-import client11 from '../../images/client11.svg';
-import client12 from '../../images/client12.svg';
 import client13 from '../../images/client13.svg';
 import client1_1 from '../../images/client1_1.svg';
-import client1_2 from '../../images/client1_2.svg';
 import client1_3 from '../../images/client1_3.svg';
 import client1_4 from '../../images/client1_4.svg';
 import client1_5 from '../../images/joom.svg';
-import client1_6 from '../../images/aliexpress.svg';
+import client1_6 from '../../images/joom1.svg';
 import client1_7 from '../../images/gett.svg';
 import client1_8 from '../../images/igg.svg';
 
@@ -32,15 +23,7 @@ export default function InfiniteSlider() {
     client1,
     client2,
     client3,
-    // client4,
-    // client5,
     client6,
-    // client7,
-    // client8,
-    // client9,
-    // client10,
-    // client11,
-    // client12,
     client13,
     client1_1,
     client1_3,
@@ -84,6 +67,7 @@ export default function InfiniteSlider() {
               className={styles.clientLogoContainer}
             >
               <img
+                data-id={idx}
                 src={imgPath}
                 alt='client-logo'
                 className={styles.image}
