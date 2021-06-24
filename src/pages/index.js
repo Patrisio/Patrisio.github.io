@@ -60,7 +60,7 @@ const IndexPage = () => {
                 </Helmet>
                 <Header />
                 <MainScreen />
-                <Indicators id='aboutus' isMobileDevice={isMobileDevice}/>
+                <Indicators id='aboutus' isMobileDevice={isMobileDevice} />
 
                 <div className={styles.textBlockContainer}>
                   <TextBlock>

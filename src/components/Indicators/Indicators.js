@@ -3,6 +3,7 @@ import * as styles from './indicators.module.css';
 import dotsBg from '../../images/dots.svg';
 import { Waypoint } from 'react-waypoint';
 import move from '../../utils/move';
+import Incrementor from '../Incrementor/Incrementor';
 
 export default function Indicators({ id, isMobileDevice }) {
   const [isActive, toggleActive] = useState(false);
@@ -33,7 +34,7 @@ export default function Indicators({ id, isMobileDevice }) {
       className: styles.dummy3
     },
     {
-      count: '05',
+      count: 5,
       text: 'лет на&nbsp;рынке',
       ref: card4,
       className: styles.dummy4
@@ -58,28 +59,28 @@ export default function Indicators({ id, isMobileDevice }) {
 
     if (module) {
       const { Flip } = module;
+      console.log(document.querySelector(`.${styles.dummy1}`));
 
       card1.current = new Flip({
         node: document.querySelector(`.${styles.dummy1}`),
-        from: 99,
-        // to: 50,
+        from: 0,
         duration: 4
       })
       card2.current = new Flip({
         node: document.querySelector(`.${styles.dummy2}`),
-        from: 99,
+        from: 0,
         // to: 70,
         duration: 4
       })
       card3.current = new Flip({
         node: document.querySelector(`.${styles.dummy3}`),
-        from: 99,
+        from: 0,
         // to: 50,
         duration: 4
       })
       card4.current = new Flip({
         node: document.querySelector(`.${styles.dummy4}`),
-        from: 99,
+        from: 0,
         // to: 5,
         duration: 4
       })
@@ -122,6 +123,11 @@ export default function Indicators({ id, isMobileDevice }) {
                     ${styles.count}
                   `}
                 />
+                {/* <Incrementor
+                  isActivate={isActive}
+                  classNames={item.className}
+                  count={item.count}
+                /> */}
                 <p
                   className={`
                     ${styles.description}

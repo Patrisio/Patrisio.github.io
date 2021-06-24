@@ -1,6 +1,9 @@
 import { g } from 'gelerator'
 
-const maxLenNum = (aNum, bNum) => (aNum > bNum ? aNum : bNum).toString().length
+const maxLenNum = (aNum, bNum) => {
+  // return aNum > bNum ? aNum : bNum).toString().length;
+  return 2;
+};
 
 const num2PadNumArr = (num, len) => {
   const padLeftStr = (rawStr, lenNum) => (rawStr.length < lenNum
@@ -41,6 +44,9 @@ export class Flip {
     this.separator = separator
     this.seperateOnly = seperateOnly
     this.separateEvery = seperateOnly ? 0 : separateEvery
+    console.log(this.from, 'this.from');
+    console.log(this.to, 'this.to');
+    console.log(maxLenNum(this.from, this.to), 'maxLenNum(this.from, this.to)');
     this._initHTML(maxLenNum(this.from, this.to))
     this.setSelect(this.from)
     if (to === undefined) return
@@ -53,6 +59,7 @@ export class Flip {
     this.node.style.position = 'relative'
     this.node.style.overflow = 'hidden'
     for (let i = 0; i < digits; i += 1) {
+      console.log(digits, 'DIDIDIDID');
       const ctnr = g(`.ctnr.ctnr${i}`, {
         style: {
           position: 'relative',
@@ -78,6 +85,7 @@ export class Flip {
       })(sprtrStr)
       this.node.appendChild(sprtr)
     }
+    console.log(this.ctnrArr, 'this.ctnrArrthis.ctnrArrthis.ctnrArrthis.ctnrArr');
     const resize = () => {
       this.height = this.ctnrArr[0].clientHeight / (this.systemArr.length + 1)
       this.node.style.height = this.height + 'px'
@@ -123,8 +131,10 @@ export class Flip {
     easeFn,
     direct
   }) {
+    console.log('HERE');
     if (easeFn) this.easeFn = easeFn
     if (direct !== undefined) this.direct = direct
+    console.log(to, '===============');
     this.setSelect(to)
     const len = this.ctnrArr.length
     this.beforeArr = num2PadNumArr(this.from, len)
@@ -145,6 +155,8 @@ export class Flip {
 
   setSelect(num) {
     const len = this.ctnrArr.length
+    console.log(this.ctnrArr, 'LENGTH');
+    console.log(num2PadNumArr(num, len));
     num2PadNumArr(num, len).forEach((n, digit) => {
       for (let i = 0; i < this.ctnrArr[digit].childNodes.length; i += 1) {
         const el = this.ctnrArr[digit].childNodes[i]
