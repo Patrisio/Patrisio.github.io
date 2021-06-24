@@ -157,6 +157,10 @@
     align-items: center;
   }
 
+  .featureCard:not(:last-child) {
+    margin-right: 30px;
+  }
+
   .featureCard {
     text-align: center;
   }
