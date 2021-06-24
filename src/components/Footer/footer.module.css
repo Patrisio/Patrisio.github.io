@@ -22,8 +22,7 @@
 .navigation {
   display: flex;
   flex-grow: 1;
-  /* justify-content: space-between; */
-  justify-content: flex-end;
+  justify-content: center;
   align-items: baseline;
 }
 
@@ -66,8 +65,8 @@ input:checked + label {
 }
 
 .langAndSocials {
-  /* display: flex; */
-  display: none;
+  display: flex;
+  /* display: none; */
 }
 
 @media screen and (max-width: 1050px) {

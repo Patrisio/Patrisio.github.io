@@ -1,12 +1,14 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useContext } from 'react';
 import * as styles from './indicators.module.css';
 import dotsBg from '../../images/dots.svg';
 import { Waypoint } from 'react-waypoint';
 import move from '../../utils/move';
 import Incrementor from '../Incrementor/Incrementor';
+import { Context } from '../../context';
 
 export default function Indicators({ id, isMobileDevice }) {
   const [isActive, toggleActive] = useState(false);
+  const { lang, t } = useContext(Context);
   let card1 = useRef(null);
   let card2 = useRef(null);;
   let card3 = useRef(null);;
@@ -17,25 +19,25 @@ export default function Indicators({ id, isMobileDevice }) {
   const indicators = [
     {
       count: 23,
-      text: 'депозитов ежемесячно',
+      text: t('indicators|депозитов ежемесячно', lang),
       ref: card1,
       className: styles.dummy1
     },
     {
       count: 70,
-      text: 'СТРАН МИРА',
+      text: t('indicators|СТРАН МИРА', lang),
       ref: card2,
       className: styles.dummy2
     },
     {
       count: 50,
-      text: 'баеров в&nbsp;штате',
+      text: t('indicators|баеров в&nbsp;штате', lang),
       ref: card3,
       className: styles.dummy3
     },
     {
       count: 5,
-      text: 'лет на&nbsp;рынке',
+      text: t('indicators|лет на&nbsp;рынке', lang),
       ref: card4,
       className: styles.dummy4
     },

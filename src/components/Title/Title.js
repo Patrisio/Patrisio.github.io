@@ -6,8 +6,7 @@ export default function Title({ text, size }) {
     <h2
       className={styles.title}
       style={{ fontSize: size }}
-    >
-      { text }
-    </h2>
+      dangerouslySetInnerHTML={{__html: text}}
+    />
   );
 }

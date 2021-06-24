@@ -9,21 +9,22 @@ import facebook from '../../images/facebook.svg';
 import linkedin from '../../images/linkedin.svg';
 
 export default function Footer() {
+  const { lang, changeLang, t } = useContext(Context);
   const navLinks = [
     {
-      text: "О НАС",
+      text: t('footer|О НАС', lang),
       link: "#aboutus",
     },
     {
-      text: "Что нас отличаеТ",
+      text: t('footer|Что нас отличает', lang),
       link: "#ourpros",
     },
     {
-      text: "КЛИЕНТЫ",
+      text: t('footer|КЛИЕНТЫ', lang),
       link: "#clients",
     },
     {
-      text: "КЕЙСЫ",
+      text: t('footer|КЕЙСЫ', lang),
       link: "#cases",
     },
   ];
@@ -46,12 +47,11 @@ export default function Footer() {
     },
   ];
 
-  const { lang, changeLang } = useContext(Context);
-
   const setLang = (e) => {
     changeLang(e.target.value);
   };
-
+  console.log(lang === 'ru', "lang === 'ru'");
+  console.log(lang === 'en', "lang === 'en'");
   return (
     <div className={styles.footerContainer}>
       <div>
@@ -78,7 +78,6 @@ export default function Footer() {
               name="radio"
               value="ru"
               checked={lang === 'ru'}
-              onChange={() => {}}
             />
             <label
               htmlFor="radio-1"
@@ -95,7 +94,6 @@ export default function Footer() {
               name="radio"
               value="en"
               checked={lang === 'en'}
-              onChange={() => {}}
             />
             <label
               htmlFor="radio-2"

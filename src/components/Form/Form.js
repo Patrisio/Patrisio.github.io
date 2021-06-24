@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Waypoint } from 'react-waypoint';
 
 import Input from '../Input/Input';
@@ -7,6 +7,7 @@ import Thumb from '../Thumb/Thumb';
 
 import type from '../../utils/type';
 import * as styles from './form.module.css';
+import { Context } from '../../context';
 
 export default function Form({ id, isMobileDevice }) {
   const initialFormState = {
@@ -29,6 +30,7 @@ export default function Form({ id, isMobileDevice }) {
   const [isActive, toggleActive] = useState(false);
   const [isDataFormSent, toggleFormState] = useState(false);
   const [formData, updateFormData] = useState(initialFormState);
+  const { lang, t } = useContext(Context);
 
   const getFieldName = (fieldName) => {
     switch (fieldName) {
@@ -109,16 +111,25 @@ export default function Form({ id, isMobileDevice }) {
     updateFormData(initialFormState);
   };
 
+  useEffect(() => {
+    type(
+      `<div class='${styles.mainTitle}'>${t('form|Интересно?', lang)}</div>`,
+      0, false, '', 'form-1', 25);
+    type(
+      `<div class='${styles.mainTitle}'>${t('form|Свяжитесь с нами', lang)}</div>`,
+      0, false, '', 'form-2', 25);
+  }, [lang]);
+
   return (
     <>
       <Waypoint
         onEnter={() => {
           if (!isActive) {
             type(
-              `<div class='${styles.mainTitle}'>Интересно?</div>`,
+              `<div class='${styles.mainTitle}'>${t('form|Интересно?', lang)}</div>`,
               0, false, '', 'form-1', 25);
             type(
-              `<div class='${styles.mainTitle}'>Свяжитесь с нами</div>`,
+              `<div class='${styles.mainTitle}'>${t('form|Свяжитесь с нами', lang)}</div>`,
               0, false, '', 'form-2', 25);
           }
         }}
@@ -170,15 +181,15 @@ export default function Form({ id, isMobileDevice }) {
       `}>
         <div className={styles.formPart}>
           <Input
-            placeholder='Введите ваше имя'
-            label='Имя'
+            placeholder={t('form|Введите ваше имя', lang)}
+            label={t('form|Имя', lang)}
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'name')}
             required
             hasError={formData.name.error}
           />
           <Input
-            placeholder='Введите ваш E-mail / Telegram / Skype'
+            placeholder={t('form|Введите ваш E-mail / Telegram / Skype', lang)}
             label='E-mail / Telegram / Skype'
             type='email'
             classNames={styles.inputMobile}
@@ -193,8 +204,8 @@ export default function Form({ id, isMobileDevice }) {
           ${styles.formPartFlex}
         `}>
           <Input
-            placeholder='Введите  ваше сообщение...'
-            label='Сообщение'
+            placeholder={t('form|Введите  ваше сообщение...', lang)}
+            label={t('form|Сообщение', lang)}
             classNames={styles.inputMobile}
             onChange={(e) => fillFormData(e, 'message')}
             hasError={formData.message.error}
@@ -216,7 +227,7 @@ export default function Form({ id, isMobileDevice }) {
             `}
             onClick={sendFormData}
           >
-            Отправить
+            {t('form|Отправить', lang)}
           </Button>
         </div>
       </div>

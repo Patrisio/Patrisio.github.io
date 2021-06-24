@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 
 import Title from '../Title/Title';
 import Paragraph from '../Paragraph/Paragraph';
@@ -9,25 +9,33 @@ import circle1 from '../../images/1.svg';
 import circle2 from '../../images/2.svg';
 import circle3 from '../../images/3.svg';
 import dotsBg from '../../images/dots.svg';
+import { Context } from '../../context';
 
 import type from '../../utils/type';
 import move from '../../utils/move';
 
+let isLangChanged = false;
+
 export default function MainScreen() {
+  const { lang, t } = useContext(Context);
+
   const circleOne = useRef(null);
   const circleTwo = useRef(null);
   const circleThree = useRef(null);
   const background = useRef(null);
 
+
   useEffect(() => {
     setTimeout(() => {
-      type(`<h2 class='${styles.mainTitleType}'>Топовая команда медиабаинга</h2>`, 0, false, '', 'mainTitle');
-    }, 4000);
+      type(`<h2 class='${styles.mainTitleType}'>${t('mainScreen|Топовая команда медиабаинга', lang)}</h2>`, 0, false, '', 'mainTitle');
+    }, isLangChanged ? 0 : 4000);
 
     setTimeout(() => {
       type(`User Acquisition `, 0, false, '', 'supTitle');
-    }, 3000);
-  }, []);
+    }, isLangChanged ? 0 : 3000);
+    
+    isLangChanged= true;
+  }, [lang]);
 
   useEffect(() => {
     window.addEventListener('mousemove', (e) => move(e, background.current));
@@ -45,7 +53,7 @@ export default function MainScreen() {
           <Title text='key features' size='29px' />
         </div>
         <div className={styles.description}>
-          <Paragraph text='Крупнейшее Performance marketing агентство в Европе, по версии Appsflyer' />
+          <Paragraph text={t('mainScreen|Крупнейшее Performance marketing агентство в Европе, по версии Apps-flyer', lang)} />
         </div>
       </div>
 

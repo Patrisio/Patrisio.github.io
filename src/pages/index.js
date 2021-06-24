@@ -17,6 +17,7 @@ import Features from '../components/Features/Features';
 import * as styles from './index.module.css';
 import { Waypoint } from 'react-waypoint';
 import type from '../utils/type';
+import { translations } from '../translations';
 
 import { Helmet } from "react-helmet";
 import 'reset-css';
@@ -26,6 +27,11 @@ const IndexPage = () => {
   const [isActive, toggleActive] = useState(false);
   const [isLoading, toggleLoading] = useState(true);
   const [isMobileDevice, setIsMobileDevice] = useState(false);
+  const t = (phrase, lang) => {
+    const [prefix, phrasePart] = phrase.split('|');
+    console.log(prefix);
+    return translations[prefix].find(phrase => phrase.ru === phrasePart)[lang];
+  };
 
   useEffect(() => {
     window.version = '1.0.16';
@@ -37,8 +43,14 @@ const IndexPage = () => {
     }
   }, []);
 
+  useEffect(() => {
+    type(
+      `<div class='${styles.titleFlex}'>${t('infiniteSlider|наши клиенты Нереально амбициозные', lang)}</div>`,
+      0, false, '', 'index-2', 20);
+  }, [lang])
+
   return (
-    <Context.Provider value={{ lang, changeLang }}>
+    <Context.Provider value={{ lang, changeLang, t }}>
     <Helmet>
       <title>SYNDICATE GROUP</title>
     </Helmet>
@@ -66,12 +78,12 @@ const IndexPage = () => {
                   <TextBlock>
                     <div className={styles.titleContainer}>
                       <Title
-                        text='Клиенты - наше все'
+                        text={t('clients|Клиенты - наше все', lang)}
                       />
                     </div>
                     <div className={styles.paragraphContainer} id='ourpros'>
-                      <Paragraph text='Наша Главная цель - это привлекать новых пользователей для наших клиентов, которые окупятся в максимально короткий срок.'/>
-                      <Paragraph text='Мы ценим долгосрочное сотрудничество и стремимся стать стратегическим партнером для каждого из наших клиентов.'/>
+                      <Paragraph text={t('clients|Наша Главная цель - это привлекать новых пользователей для наших клиентов, которые окупятся в максимально короткий срок.', lang)} />
+                      <Paragraph text={t('clients|Мы ценим долгосрочное сотрудничество и стремимся стать стратегическим партнером для каждого из наших клиентов.', lang)} />
                     </div>
                   </TextBlock>
                 </div>
@@ -99,7 +111,7 @@ const IndexPage = () => {
                 onEnter={() => {
                   if (!isActive) {
                     type(
-                      `<div class='${styles.titleFlex}'>наши клиенты Нереально амбициозные</div>`,
+                      `<div class='${styles.titleFlex}'>${t('infiniteSlider|наши клиенты Нереально амбициозные', lang)}</div>`,
                       0, false, '', 'index-2', 20);
                     // type(
                     //   `<h2 class='${styles.paragraphFlex}'>Мы отслеживаем более 1 миллиона коммерческих кликов через наших клиентов ежемесячно.</h2>`,
@@ -134,17 +146,17 @@ const IndexPage = () => {
                     ${isActive && styles.active}
                   `}>
                     <Title
-                      text='Партнерство с&nbsp;независимыми арбитражными командами'
+                      text={t('partners|Партнерство с&nbsp;независимыми арбитражными командами', lang)}
                     />
                   </div>
                   <div className={`
                     ${styles.paragraph3}
                     ${isActive && styles.active}
                   `}>
-                    <Paragraph text='Мы готовы обсуждать сотрудничество с целыми командами, брать их под свое крыло и давать всю инфраструктуру для того, чтобы делать х10 от того, что они делают сейчас.' />
+                    <Paragraph text={t('partners|Мы готовы обсуждать сотрудничество с целыми командами, брать их под свое крыло и давать всю инфраструктуру для того, чтобы делать х10 от того, что они делают сейчас.', lang)} />
                   </div>
                   <div className={styles.mobileParagraphs}>
-                    <Paragraph text='Мы готовы обсуждать сотрудничество с целыми командами, брать их под свое крыло и давать всю инфраструктуру для того, чтобы делать х10 от того, что они делают сейчас.'/>
+                    <Paragraph text={t('partners|Мы готовы обсуждать сотрудничество с целыми командами, брать их под свое крыло и давать всю инфраструктуру для того, чтобы делать х10 от того, что они делают сейчас.', lang)} />
                   </div>
                 </TextBlock>
 

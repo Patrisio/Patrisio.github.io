@@ -47,6 +47,36 @@
   display: none;
 }
 
+.langs {
+  display: flex;
+}
+
+.radio {
+  color: #fff;
+}
+
+.radio:not(:last-child) {
+  margin-right: 20px;
+}
+
+input[name=radio] {
+  display: none;
+}
+  
+
+.label {
+  cursor: pointer;
+  opacity: .5;
+}
+
+input:checked + label {
+  opacity: 1;
+}
+
+.active {
+  opacity: 1;
+}
+
 @media (max-width: 1130px) {
   .button {
     display: none !important;
@@ -62,6 +92,10 @@
     position: static;
     margin-left: auto;
     transform: none;
+  }
+
+  .langs {
+    display: none;
   }
 }
 

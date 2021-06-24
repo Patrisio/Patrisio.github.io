@@ -1,25 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import * as styles from './burger.module.css';
 import Button from '../Button/Button';
+import { Context } from '../../context';
 
 export default function Burger() {
   const [isOpen, toggle] = useState(false);
+  const { lang, t } = useContext(Context);
 
   const navLinks = [
     {
-      text: "О НАС",
+      text: t('burger|О НАС', lang),
       link: "#aboutus",
     },
     {
-      text: "Что нас отличаеТ",
+      text: t('burger|Что нас отличает', lang),
       link: "#ourpros",
     },
     {
-      text: "КЛИЕНТЫ",
+      text: t('burger|КЛИЕНТЫ', lang),
       link: "#clients",
     },
     {
-      text: "КЕЙСЫ",
+      text: t('burger|КЕЙСЫ', lang),
       link: "#cases",
     },
   ];
@@ -62,7 +64,7 @@ export default function Burger() {
               });
             }}
           >
-            Запустить кампанию
+            {t('burger|Запустить кампанию', lang)}
           </Button>
         </div>
       }
