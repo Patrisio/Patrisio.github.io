@@ -39,7 +39,11 @@ export default function InfiniteSlider() {
   useEffect(() => {
     setInterval(() => {
       positionX--;
-      innerSlider.current.style.transform = `translateX(${positionX}px)`;
+      const innerSliderElement = innerSlider.current;
+
+      if (innerSliderElement) {
+        innerSliderElement.style.transform = `translateX(${positionX}px)`;
+      }
 
       if (positionX % 1000 === 0) {
         updateSlides(prev => {

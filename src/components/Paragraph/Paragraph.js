@@ -6,8 +6,7 @@ export default function Paragraph({ text, size }) {
     <h2
       className={styles.paragraph}
       style={{ fontSize: size }}
-    >
-      { text }
-    </h2>
+      dangerouslySetInnerHTML={{ __html: text }}
+    />
   );
 }

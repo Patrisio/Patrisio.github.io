@@ -157,6 +157,20 @@ export const translations = {
       en: 'Send message',
     },
   ],
+  formResponse: [
+    {
+      ru: 'ваша заявка успешно отправлена',
+      en: 'YOUR APPLICATION IS SENT SUCCESSFULLY',
+    },
+    {
+      ru: 'В ближайшее время с&nbsp;Вами&nbsp;свяжется наш менеджер.',
+      en: 'Our manager will contact you shortly.',
+    },
+    {
+      ru: 'OK',
+      en: 'OK',
+    },
+  ],
   footer: [
     {
       ru: 'О НАС',

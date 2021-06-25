@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import Title from '../Title/Title';
 import Paragraph from '../Paragraph/Paragraph';
@@ -7,8 +7,11 @@ import Shadow from '../Shadow/Shadow';
 
 import success from '../../images/success.svg';
 import * as styles from './thumb.module.css';
+import { Context } from '../../context';
 
 export default function Thumb({ toggleFormState }) {
+  const { lang, t } = useContext(Context);
+
   const closeThumb = () => {
     toggleFormState(false);
   };
@@ -20,20 +23,20 @@ export default function Thumb({ toggleFormState }) {
 
         <div className={styles.thumbTitle}>
           <Title
-            text='ваша заявка успешно отправлена'
+            text={t('formResponse|ваша заявка успешно отправлена', lang)}
           />
         </div>
 
         <div className={styles.thumbParagraph}>
           <Paragraph
-            text='В ближайшее время с&nbsp;Вами&nbsp;свяжется наш менеджер.'
+            text={t('formResponse|В ближайшее время с&nbsp;Вами&nbsp;свяжется наш менеджер.', lang)}
           />
         </div>
         <Button
           onClick={closeThumb}
           classNames={styles.thumbButton}
         >
-          ок
+          {t('formResponse|OK', lang)}
         </Button>
 
         <div className={`

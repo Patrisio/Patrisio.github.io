@@ -112,12 +112,14 @@ export default function Form({ id, isMobileDevice }) {
   };
 
   useEffect(() => {
-    type(
-      `<div class='${styles.mainTitle}'>${t('form|Интересно?', lang)}</div>`,
-      0, false, '', 'form-1', 25);
-    type(
-      `<div class='${styles.mainTitle}'>${t('form|Свяжитесь с нами', lang)}</div>`,
-      0, false, '', 'form-2', 25);
+    if (!isDataFormSent) {
+      type(
+        `<div class='${styles.mainTitle}'>${t('form|Интересно?', lang)}</div>`,
+        0, false, '', 'form-1', 25);
+      type(
+        `<div class='${styles.mainTitle}'>${t('form|Свяжитесь с нами', lang)}</div>`,
+        0, false, '', 'form-2', 25);
+    }
   }, [lang]);
 
   return (
