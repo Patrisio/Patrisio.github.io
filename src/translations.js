@@ -123,6 +123,32 @@ export const translations = {
       en: 'We are ready to discuss cooperation with entire teams, take them under our wing and provide all the infrastructure in order to do x10 of what they are doing now.',
     },
   ],
+  testimonials: [
+    {
+      ru: 'Всегда отличное качество трафика, феноменальная скорость отклика и быстрые результаты, а также приятное общение с нашим менеджером. Чего еще можно ждать от партнера? Мы с удовольствием работаем и смотрим, каких же еще результатов сможем достичь в нашем сотрудничестве.',
+      en: 'We have had great conversion, phenomenal response rates and quick results with excellent communication from our manager. What more could we ask for in a partner? We’re excited to see how much more we can achieve in the future with this company.',
+    },
+    {
+      ru: 'Мы работаем вместе почти 2 года, и наши отношения всегда были прекрасными. Они льют разные источники и ГЕО, что полностью соответствует нашим потребностям. Менеджер всегда приветливая, готова ответить на любые вопросы. Мы надеемся на  долгосрочное партнерство и на сохранение дружеских отношений.',
+      en: 'We have been working together almost 2 years now and our relationship has always been great. They have multiple sources and markets to tend to all your needs. The account manager was always super friendly and available to contact for any queries we would have. We want a long term partnership with them and hope to keep the relationship alive.',
+    },
+    {
+      ru: 'Мы начали работать в 2018 году и до сих пор поддерживаем плодотворные и взаимовыгодные партнерские отношения. Их команда всегда оказывает большую поддержку и делает все возможное, чтобы обеспечить непрерывный рост объема трафика. Общение было и остается ключевым моментом, и помимо постоянных диалогов на уровне бизнеса, мы также наслаждаемся чувством юмора нашего чудесного менеджера.',
+      en: 'We have been working with the company since 2018 and up to now still enjoy a fruitful and mutually beneficial partnership. Their team always showed great support and always went the extra mile to ensure continuous growth. Communication was and still is key and apart from permanent dialogues on a business level, we also started to enjoy the sense of humor from our more than reliable account manager, which puts a smile on our faces.',
+    },
+    {
+      ru: '20 октября',
+      en: '20 october',
+    },
+    {
+      ru: '05 ноября',
+      en: '05 november',
+    },
+    {
+      ru: '12 декабря',
+      en: '12 december',
+    },
+  ],
   form: [
     {
       ru: 'Интересно?',

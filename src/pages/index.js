@@ -7,6 +7,7 @@ import TextBlock from '../components/TextBlock/TextBlock';
 import Title from '../components/Title/Title';
 import Paragraph from '../components/Paragraph/Paragraph';
 import Sources from '../components/Sources/Sources';
+import Testimonials from '../components/Testimonials/Testimonials';
 import Form from '../components/Form/Form';
 import Footer from '../components/Footer/Footer';
 import InfiniteSlider from '../components/InfiniteSlider/InfiniteSlider';
@@ -161,6 +162,7 @@ const IndexPage = () => {
                 </TextBlock>
 
               {/* <Charts id='cases' /> */}
+              <Testimonials id='testimonials' />
 
               <Form id='form' isMobileDevice={isMobileDevice}/>
 
