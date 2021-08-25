@@ -8,6 +8,7 @@
 
 .testimonialsMobile {
   display: none;
+  margin-bottom: 60px;
 }
 
 .testimonialText {
@@ -348,7 +349,6 @@
   .desktopChart {
     display: none;
   }
-
   .chartsContainerMobile {
     display: block;
   }
