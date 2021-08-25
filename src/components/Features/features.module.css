@@ -161,6 +161,10 @@
     text-align: center;
   }
 
+  .featureCard:not(:last-child) {
+    margin-right: 0;
+  }
+
   .featureCard {
     margin-bottom: 40px;
   }
